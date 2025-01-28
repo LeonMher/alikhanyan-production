@@ -1,0 +1,6 @@
+.home-container {
+  background: url("../../assets/instruments.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
