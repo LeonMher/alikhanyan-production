@@ -1,0 +1,7 @@
+.hero-container {
+  background: url("../../../assets/hero.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  color: white;
+}
