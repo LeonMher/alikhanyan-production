@@ -5,5 +5,5 @@ import tailwindcss from "@tailwindcss/vite";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  assetsInclude: ["**/*.PNG", "**/*.jpg", "**/*.jpeg", "**/*.MP4"],
+  assetsInclude: ["**/*.PNG", "**/*.jpg", "**/*.JPG", "**/*.jpeg", "**/*.MP4"],
 });

@@ -12,10 +12,9 @@ const Card = () => {
             <img src={teacher.img} alt="" />
           </div>
           <div className="flex flex-col gap-1">
-            <p>{teacher.skills.subject}</p>
-            <p>{teacher.skills.experience}</p>
-            <p>{teacher.skills.certification}</p>
-            <p>{teacher.skills.languages}</p>
+            <p>Subject: {teacher.skills.subject}</p>
+            <p>Experience: {teacher.skills.experience}</p>
+            <p>{teacher.skills.atAvosSchool}</p>
           </div>
           <div>{teacher.description}</div>
         </div>
