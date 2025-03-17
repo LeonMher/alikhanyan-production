@@ -6,7 +6,7 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 
-export const TableComponent = ({ data, columns }) => {
+export const TableComponent = ({ data, columns, columnNames }) => {
   return (
     <TableContainer
       component={Paper}
@@ -15,8 +15,13 @@ export const TableComponent = ({ data, columns }) => {
       <Table sx={{ minWidth: 250 }} aria-label="simple table">
         <TableHead>
           <TableRow>
-            {columns.map((column) => (
-              <TableCell key={column}>{column}</TableCell>
+            {columns.map((column, index) => (
+              <TableCell
+                key={column}
+                align={index === columns.length - 1 ? "right" : "left"}
+              >
+                {columnNames[index]}
+              </TableCell>
             ))}
           </TableRow>
         </TableHead>
@@ -26,10 +31,10 @@ export const TableComponent = ({ data, columns }) => {
               key={row.id}
               sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
             >
-              {columns.map((column) => (
+              {columns.map((column, index) => (
                 <TableCell
                   key={column}
-                  align={column === "price" ? "right" : "left"}
+                  align={index === columns.length - 1 ? "right" : "left"}
                 >
                   {row[column]}
                 </TableCell>

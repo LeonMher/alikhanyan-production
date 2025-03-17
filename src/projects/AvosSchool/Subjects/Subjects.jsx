@@ -12,15 +12,6 @@ const Subjects = () => {
     return { sections, pricing };
   }
 
-  const rows = [
-    createData("Հարվածային գործիքներ", "8 դասը՝ 20.000 AMD"),
-    createData("Դհոլ", "8 դասը՝ 10.000 դրամ"),
-    createData("Կիթառ", "8 դասը՝ 15.000 դրամ, խմբում 2-3 աշակերտ"),
-    createData("Դասշնամուր", "Միայն անհատական դասեր"),
-    createData("Ջութակ", "Միայն անհատական դասեր"),
-    createData("Պար", "12 դասը՝ 15.000 դրամ"),
-  ];
-
   const data = [
     { id: 1, name: "Հարվածային գործիքներ", price: "8 դասը՝ 20.000 AMD" },
     { id: 2, name: "Դհոլ", price: "8 դասը՝ 10.000 դրամ" },
@@ -29,39 +20,109 @@ const Subjects = () => {
     { id: 5, name: "Ջութակ", price: "Միայն անհատական դասեր" },
     { id: 6, name: "Պար", price: "12 դասը՝ 15.000 դրամ" },
   ];
+  const personalTeaching = [
+    {
+      id: 1,
+      name: "Հարվածային գործիքներ",
+      price: "8 դասը՝ 50.000 AMD, մաստեր կլասս 1 դասը՝ 10.000 դրամ",
+    },
+    {
+      id: 2,
+      name: "Դհոլ",
+      price: "8 դասը՝ 40.000 դրամ, մաստեր կլասս 1 դասը՝ 10.000 դրամ",
+    },
+    {
+      id: 3,
+      name: "Վոկալ",
+      price: "8-13 տ. 1 դասը՝ 5.000 դրամ, 13 տ.-ից բարձր 1 դասը՝ 6.000 դրամ",
+    },
+    { id: 4, name: "Կիթառ", price: "1 դասը՝ 5.000 դրամ" },
+    { id: 5, name: "Դասշնամուր", price: "1 դասը՝ 5.000 դրամ" },
+    {
+      id: 6,
+      name: "Ջութակ",
+      price: "8-13 տ. 1 դասը՝ 5.000 դրամ, 13 տ.-ից բարձր 1 դասը՝ 6.000 դրամ",
+    },
+    { id: 7, name: "Պար", price: "Անհատական 8 դասը՝ 25.000 դրամ" },
+  ];
+
+  const afterSchoolData = [
+    {
+      id: 1,
+      subject: "Մաթեմատիկա",
+      name: "4-7",
+      price: "Անհատական 1 դասը` 3.000 դրամ",
+    },
+    {
+      id: 2,
+      subject: "Մաթեմատիկա",
+      name: "8-12",
+      price: "Անհատական 1 դասը` 4.000 դրամ",
+    },
+    {
+      id: 3,
+      subject: "Անգլերեն",
+      name: "0 մակարդակ	",
+      price: "1 դաս- 3.000 դրամ, խմբայինը` 2.000 դրամ",
+    },
+    {
+      id: 4,
+      subject: "Հայոց լեզու",
+      name: "	",
+      price: "8 անհատական դաս- 30.000 դրամ",
+    },
+  ];
+
+  const lessonPreparation = [
+    {
+      id: 1,
+      name: "1-3-րդ դասարան",
+      price: "45.000 դրամ",
+    },
+    {
+      id: 2,
+      name: "4-6-րդ դասարան	",
+      price: "60.000 դրամ",
+    },
+    {
+      id: 3,
+      name: "7-9-րդ դասարան	",
+      price: "80.000 դրամ",
+    },
+  ];
 
   const columns = ["name", "price"];
+  const columnNames = ["բաժիններ", "գին"];
+  // const columnNames = ["բաժիններ", "գին", "մաթեմատիկա"];
   return (
     <div>
-      {/* <TableContainer
-        component={Paper}
-        sx={{ "@media (max-width: 600px)": { overflowX: "auto" } }}
-      >
-        <Table sx={{ minWidth: 250 }} aria-label="simple table">
-          <TableHead>
-            <TableRow>
-              <TableCell>Բաժիններ</TableCell>
-              <TableCell align="right">Խմբային դասեր</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {rows.map((row) => (
-              <TableRow
-                key={row.sections}
-                sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
-              >
-                <TableCell component="th" scope="row">
-                  {row.sections}
-                </TableCell>
-                <TableCell align="right">{row.pricing}</TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </TableContainer> */}
-      <TableComponent data={data} columns={columns} />
+      <h1>Խմբային դասեր</h1>
+      <TableComponent
+        data={data}
+        columns={columns}
+        columnNames={["բաժիններ", "գին"]}
+      />
       <div className="h-10"></div>
-      <TableComponent data={data} columns={columns} />
+      <h1>Անհատական դասեր</h1>
+      <TableComponent
+        data={personalTeaching}
+        columns={columns}
+        columnNames={columnNames}
+      />
+      <div className="h-10"></div>
+      <h1>After School</h1>
+      <TableComponent
+        data={afterSchoolData}
+        columns={columns}
+        columnNames={["Դասարան", "գին"]}
+      />
+      <div className="h-10"></div>
+      <h1>Դասապատրաստում</h1>
+      <TableComponent
+        data={lessonPreparation}
+        columns={columns}
+        columnNames={["Դասարան", "գին"]}
+      />
     </div>
   );
 };
