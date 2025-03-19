@@ -1,6 +1,7 @@
 import Hero from "./Hero/Hero";
 import Teachers from "./Teachers/Teachers";
 import Subjects from "./Subjects/Subjects";
+import Footer from "./Footer/Footer";
 
 const AvosSchool = () => {
   return (
@@ -9,6 +10,7 @@ const AvosSchool = () => {
       <div className="flex justify-center flex-col items-center">
         <Teachers />
         <Subjects />
+        <Footer />
       </div>
     </div>
   );
