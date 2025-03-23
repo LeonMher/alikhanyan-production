@@ -96,28 +96,28 @@ const Subjects = () => {
   // const columnNames = ["բաժիններ", "գին", "մաթեմատիկա"];
   return (
     <div>
-      <h1>Խմբային դասեր</h1>
+      <h1 className="text-[30px] flex justify-center">Խմբային դասեր</h1>
       <TableComponent
         data={data}
         columns={columns}
         columnNames={["բաժիններ", "գին"]}
       />
       <div className="h-10"></div>
-      <h1>Անհատական դասեր</h1>
+      <h1 className="text-[30px] flex justify-center">Անհատական դասեր</h1>
       <TableComponent
         data={personalTeaching}
         columns={columns}
         columnNames={columnNames}
       />
       <div className="h-10"></div>
-      <h1>After School</h1>
+      <h1 className="text-[30px] flex justify-center">After School</h1>
       <TableComponent
         data={afterSchoolData}
         columns={columns}
         columnNames={["Դասարան", "գին"]}
       />
       <div className="h-10"></div>
-      <h1>Դասապատրաստում</h1>
+      <h1 className="text-[30px] flex justify-center">Դասապատրաստում</h1>
       <TableComponent
         data={lessonPreparation}
         columns={columns}

@@ -4,26 +4,31 @@ import clockIcon from "../../../assets/icons/clock.png";
 import "./Footer.css";
 const Footer = () => {
   return (
-    <div className="flex flex-row">
-      <div className="time-location-info">
-        <div className="flex items-center">
+    <div className="w-full flex flex-row md:flex-col justify-center items-center p-[20px] bg-[#001632] text-white">
+      <div className="time-location-info flex flex-col justify-between  gap-[20px]">
+        <div className="flex items-center gap-[10px]">
           <img className="icon" src={phoneIcon} alt="" />
-          <p>055-241-333</p>
+          <p className="md:text-[10px]">055-241-333</p>
         </div>
-        <div className="flex items-center">
+        <div className="flex items-start gap-[10px]">
           <img className="icon" src={locationIcon} alt="" />
-          <p>Մաշտոցի պողոտա 8/11, Փակ շուկայի դիմացի մայթին</p>
+          <p className="md:text-[10px]">
+            Մաշտոցի պողոտա 8/11, Փակ շուկայի դիմացի մայթին
+          </p>
         </div>
-        <div className="flex items-center">
+        <div className="flex items-center gap-[10px]">
           <img className="icon" src={clockIcon} alt="" />
-          <p>24/7/365</p>
+          <p className="md:text-[10px]">24/7/365</p>
         </div>
       </div>
-      <div className="text-sm w-[400px]">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad optio
-        temporibus, quasi fuga soluta incidunt unde numquam tempora est
-        veritatis nobis quae saepe dicta necessitatibus iusto aut explicabo
-        inventore earum.
+      <div className="text-sm w-[400px] md:text-[10px] mt-[10px] flex flex-col gap-[10px]">
+        <p>Thank You for Choosing Alikhanyan’s Music Studio!</p>
+        <p>
+          We’re honored to be part of your musical journey. Whether you’re here
+          to record, learn, or create, we’re committed to providing the best
+          experience. Stay tuned for updates, special offers, and exclusive
+          content!
+        </p>
       </div>
     </div>
   );
