@@ -1,4 +1,5 @@
 import Hero from "./Hero/Hero";
+import Rooms from "./rooms/Rooms";
 import Teachers from "./Teachers/Teachers";
 import Subjects from "./Subjects/Subjects";
 
@@ -7,8 +8,9 @@ const AvosSchool = () => {
     <div>
       <Hero />
       <div className="flex justify-center flex-col items-center">
-        <Teachers />
-        <Subjects />
+        <Rooms />
+        {/* <Teachers /> */}
+        {/* <Subjects /> */}
       </div>
     </div>
   );
