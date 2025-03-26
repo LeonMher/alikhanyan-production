@@ -1,17 +1,6 @@
-// import Table from "@mui/material/Table";
-// import TableBody from "@mui/material/TableBody";
-// import TableCell from "@mui/material/TableCell";
-// import TableContainer from "@mui/material/TableContainer";
-// import TableHead from "@mui/material/TableHead";
-// import TableRow from "@mui/material/TableRow";
-// import Paper from "@mui/material/Paper";
 import { TableComponent } from "../../../components/TableComponent";
 
 const Subjects = () => {
-  function createData(sections, pricing) {
-    return { sections, pricing };
-  }
-
   const data = [
     { id: 1, name: "Հարվածային գործիքներ", price: "8 դասը՝ 20.000 AMD" },
     { id: 2, name: "Դհոլ", price: "8 դասը՝ 10.000 դրամ" },

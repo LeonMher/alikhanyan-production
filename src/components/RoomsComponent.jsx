@@ -1,19 +1,23 @@
+import { rooms } from "../data/rooms";
+
 const RoomsComponent = () => {
   return (
-    <div className="flex flex-row">
-      <div>image</div>
-      <div>
-        <div>name</div>
-        <div>4000 amd</div>
-        <div>
-          <p>
-            Drums: Yamaha Stage Custom Keyboard: Korg Kronos 88 keys Bass Guitar
-            Combo: Ampeg Solo Guitar Combos: Artec, Vox, Fender Mustang GT 100
-                 
-          </p>
+    <>
+      {rooms.map((room, index) => (
+        <div key={index} className="flex justify-around bg-amber-100">
+          <div className="w-full">
+            <img className="w-full" src={room.img} alt="" />
+          </div>
+          <div className="w-1/2 flex flex-col justify-center items-center">
+            <div>{room.name}</div>
+            <div>{room.price}</div>
+            <div className="w-1/2">
+              <p>{room.instruments}</p>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
+      ))}
+    </>
   );
 };
 
