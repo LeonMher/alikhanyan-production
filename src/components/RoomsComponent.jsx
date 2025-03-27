@@ -6,10 +6,10 @@ const RoomsComponent = () => {
       {rooms.map((room, index) => (
         <div
           key={index}
-          className="flex flex-col justify-around md:flex-row bg-amber-100"
+          className="flex flex-col justify-around md:flex-row bg-red-950 text-white mb-[50px] p-2 md:p-12"
         >
-          <div className="w-full">
-            <img className="w-full" src={room.img} alt="" />
+          <div className="w-full ">
+            <img className="w-full rounded-[65px]" src={room.img} alt="" />
           </div>
           <div className="w-full flex flex-col justify-start items-start gap-[30px] p-[20px] md:gap-[50px] p-[40px] md:w-1/2">
             <div>
