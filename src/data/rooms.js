@@ -1,6 +1,7 @@
 import BlueRoom from "../assets/rooms/blue_room.JPG";
 import RedRoom from "../assets/rooms/red_room.JPG";
 import GreenRoom from "../assets/rooms/green_room.JPG";
+import OrangeRoom from "../assets/rooms/orange_room.JPG";
 
 export const rooms = [
   {
@@ -33,6 +34,15 @@ Solo Guitar Amp: Peavey JSX Joe Satriani Signature 120-Watt Guitar Head
         Drums: Yamaha Stage Custom
 Stereo Monitor
 Solo Guitar Combo: Marshall MG 10 
+      `,
+  },
+  {
+    name: "Orange Room (22 sq.m.)",
+    img: OrangeRoom,
+    price: "3000 AMD/hour",
+    instruments: `
+        Keyboard: Yamaha MX61
+Stereo Monitor
       `,
   },
 ];
