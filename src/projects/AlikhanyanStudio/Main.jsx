@@ -19,8 +19,6 @@ const AvosSchool = () => {
       <div className="flex justify-center flex-col items-center">
         <Rooms />
         <Footer />
-        {/* <Teachers /> */}
-        {/* <Subjects /> */}
       </div>
     </div>
   );
