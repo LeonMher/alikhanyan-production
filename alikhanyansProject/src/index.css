@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #ff4d4d;
+  --secondary: #1a1a1a;
+  --accent: #ffd700;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--secondary);
+  color: white;
+}
+
+.hero-section {
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.gradient-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.3)
+  );
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 bg-[var(--primary)] text-white rounded-full font-semibold 
+           hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105;
+  }
+
+  .section-title {
+    @apply text-4xl md:text-5xl font-bold mb-8 text-center;
+  }
+
+  .card {
+    @apply bg-gray-800 rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300;
+  }
+}

@@ -15,9 +15,9 @@ const Home = () => {
       <div className="flex flex-col gap-1 justify-center items-center md:flex-row">
         <div className="md:w-1/5 flex flex-row md:flex-col justify-around items-center z-10 transition duration-300 ease-in-out hover:scale-125">
           <img className="w-3/9 md:w-4/6" src={ProductionLogo} alt="" />
-          <Link to="/test">
+          <Link to="/alikhanyans-project">
             <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4">
-              Production
+              Project
             </button>
           </Link>
         </div>
