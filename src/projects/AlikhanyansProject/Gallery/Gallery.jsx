@@ -14,7 +14,7 @@ const Gallery = () => {
             <div className="gallery-title flex items-center justify-center"></div>
             <div className="pictures-layout">
               <div className="w-[330px] md:w-[500px]">
-                <img src={project.img} alt="" />
+                <img className="rounded-2xl" src={project.img} alt="" />
               </div>
             </div>
           </div>
