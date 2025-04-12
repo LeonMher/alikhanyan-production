@@ -1,5 +1,7 @@
 import { useRef } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
+import { Link } from "react-router";
+
 import "./NavBar.css";
 
 function NavBar() {
@@ -11,7 +13,9 @@ function NavBar() {
 
   return (
     <header>
-      <h3>Project</h3>
+      <Link to="/">
+        <h3 className="cursor-pointer hover:text-red-600">Project</h3>
+      </Link>
       <nav ref={navRef}>
         <a href="/#">Home</a>
         <a href="/#">About us</a>
