@@ -18,7 +18,7 @@ const AvosSchool = () => {
       <Hero />
       <div className="flex justify-center flex-col items-center">
         <Rooms />
-        <Footer />
+        <Footer />  
       </div>
     </div>
   );
