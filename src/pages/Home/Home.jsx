@@ -7,35 +7,39 @@ import { Link } from "react-router";
 
 const Home = () => {
   return (
-    <div className="home-container flex justify-center items-center">
-      <img
+    <div className="home-container flex justify-center items-center ">
+      {/* <img
         className="absolute top-0 left-0 w-full h-full object-cover"
         src={CoverPicture}
         alt=""
-      />
-      <div className="flex flex-col gap-2 justify-center items-center md:flex-row">
-        <div className="md:w-1/5 flex flex-row md:flex-col justify-around items-center z-10 transition duration-300 ease-in-out hover:scale-125">
-          <img className="w-3/9 md:w-4/6" src={ProductionLogo} alt="" />
+      /> */}
+      <div className="flex flex-col md:flex-row w-full justify-around md:items-around items-center">
+        <div className="flex flex-row md:flex-col gap-[50px] items-center duration-300 ease-in-out hover:scale-125">
+          <img className="w-[100px] md:w-[210px]" src={ProductionLogo} alt="" />
           <Link to="/alikhanyans-project">
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4">
+            <button className="w-[100px] relative left-[20px] md:left-0 text-[11px] text-white bg-blue-800 p-[20px] rounded-2xl cursor-pointer">
               Project
             </button>
           </Link>
         </div>
 
-        <div className="md:w-1/5 z-10 flex flex-row md:flex-col justify-around items-center transition duration-300 ease-in-out hover:scale-125">
-          <img className="w-3/10 md:w-5/6" src={Studio} alt="" />
+        <div className="flex flex-row md:flex-col gap-[50px] justify-center items-center duration-300 ease-in-out hover:scale-125">
+          <img className="md:w-[500px] w-[150px]" src={Studio} alt="" />
           <Link to="/alikhanyan-studio">
-            <button className="w-[100px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4">
+            <button className="w-[100px] text-[11px]  text-white bg-blue-800 p-[20px] rounded-2xl cursor-pointer">
               Studio
             </button>
           </Link>
         </div>
-        <div className="z-10 flex flex-row md:flex-col justify-around items-center transition duration-300 ease-in-out hover:scale-125">
-          <div className="flex md:flex-col md:items-start items-center">
-            <img className="w-3/7 md:w-4/7" src={AvosSchoolLogo} alt="" />
+        <div className="duration-300  ease-in-out hover:scale-125">
+          <div className="flex flex-row gap-[50px] md:flex-col justify-center items-center">
+            <img
+              className="md:w-[250px] w-[140px]"
+              src={AvosSchoolLogo}
+              alt=""
+            />
             <Link to="/avosschool">
-              <button className="md:ml-[60px] w-[150px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4">
+              <button className="w-[100px] text-[11px] text-white bg-blue-800 p-[20px] rounded-2xl cursor-pointer">
                 Avos School
               </button>
             </Link>
