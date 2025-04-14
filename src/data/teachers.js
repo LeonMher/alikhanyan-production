@@ -1,5 +1,5 @@
 import CarlosTeacher from "../assets/carlos.jpg";
-import MarineMnatsakanyan from "../assets/MarineVocal.jpg";
+import MarineMnatsakanyan from "../assets/MarineVocal.JPG";
 import AramHakobyan from "../assets/AramDhol.JPG";
 import AnnaMath from "../assets/AnnaMath.JPG";
 import AnushSimonyan from "../assets/Anush.JPG";
