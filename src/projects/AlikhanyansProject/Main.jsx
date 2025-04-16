@@ -3,6 +3,7 @@ import About from "./About/About";
 import Gallery from "./Gallery/Gallery";
 import Footer from "./Footer/Footer";
 import NavBar from "./NavBar/NavBar";
+import Partners from './Partners/Partners'
 
 const AlikhanyansProject = () => {
   return (
@@ -11,6 +12,7 @@ const AlikhanyansProject = () => {
       <Hero />
       <About />
       <Gallery />
+      <Partners />
       <Footer />
     </div>
   );
