@@ -28,7 +28,7 @@ const Footer = () => {
           We’re honored to be part of your musical journey. Whether you’re here
           to record, learn, or create, we’re committed to providing the best
           experience. Stay tuned for updates, special offers, and exclusive
-          content!
+          content!!
         </p>
       </div>
     </div>

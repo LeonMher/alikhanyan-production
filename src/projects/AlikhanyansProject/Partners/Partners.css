@@ -1,0 +1,36 @@
+/* Partners.css */
+.partners-container {
+  width: 100%;
+  overflow: hidden; /* Hide anything that goes out of the container */
+}
+
+.partners-logos {
+  display: flex;
+  gap: 20px; /* Adjust the space between logos */
+  animation: slide-left 70s linear infinite; /* Animation for smooth scrolling */
+}
+
+.partner-logo {
+  width: 100px; /* Width of the circular logos */
+  height: 100px; /* Height of the circular logos */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%; /* Makes the logos circular */
+  overflow: hidden;
+}
+
+.partner-logo img {
+  width: 80%; /* Resize the logos inside the circle */
+  height: 80%;
+  object-fit: contain;
+}
+
+@keyframes slide-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%); /* Move to the left */
+  }
+}
