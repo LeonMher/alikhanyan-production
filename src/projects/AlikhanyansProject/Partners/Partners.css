@@ -21,8 +21,8 @@
 }
 
 .partner-logo img {
-  width: 80%; /* Resize the logos inside the circle */
-  height: 80%;
+  width: 100%; /* Resize the logos inside the circle */
+  height: 100%;
   object-fit: contain;
 }
 

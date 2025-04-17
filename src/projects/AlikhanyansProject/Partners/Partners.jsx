@@ -1,19 +1,27 @@
 // import AboutUsPic from "../../../assets/project/aboutUsPic.jpeg";
 import Instagram from '../../../assets/project/instagram.jpeg';
+import First from '../../../assets/project/partners/1.png';
+import Second from '../../../assets/project/partners/2.png';
+import Third from '../../../assets/project/partners/3.png';
+import Forth from '../../../assets/project/partners/4.png';
+import Fifth from '../../../assets/project/partners/5.png';
+import Sixth from '../../../assets/project/partners/6.png';
+import Seventh from '../../../assets/project/partners/7.png';
+import Eighth from '../../../assets/project/partners/8.png';
+
 // import Logo from '../../../assets/logos/alikhanyans_project.png';
 import './Partners.css';
 
 const About = () => {
   const PartnerLogos = [
-    Instagram,
-    Instagram,
-    Instagram,
-    Instagram,
-    Instagram,
-    Instagram,
-    Instagram,
-    Instagram,
-    Instagram,
+    First,
+    Second,
+    Third,
+    Forth,
+    Fifth,
+    Sixth,
+    Seventh,
+    Eighth,
   ];
 
   return (
