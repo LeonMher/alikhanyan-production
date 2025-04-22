@@ -18,7 +18,7 @@ import Artur_Knyazyan from "../assets/project/gallery/artur_knyazyan.jpeg";
 import Davit_Nersisyan from "../assets/project/gallery/davit_nersisyan.jpg";
 import Garnik_Gevorgyan from "../assets/project/gallery/garnik_gevorgyan.jpg";
 import Grisha_Simonyan from "../assets/project/gallery/grisha_simonyan.jpg";
-import Harutyun_Khachatryan from "../assets/project/gallery/harutyun_khachatryan.jpg";
+import Harutyun_Khachatryan from "../assets/project/gallery/harutyun_khachatryan.JPG";
 import Hayk_Grigoryan from "../assets/project/gallery/hayk_grigoryan.jpg";
 import Sergey_Areskin from "../assets/project/gallery/sergey_areskin.jpg";
 import Vahan_Urutyan from "../assets/project/gallery/vahan_urutyan.jpg";
