@@ -1,11 +1,3 @@
-// import ArturAlikhanyan from "../assets/project/gallery/artur_alikhanyan.jpg";
-// import BassGuitarist from "../assets/project/gallery/bass_guitarist.jpg";
-// import Drummer from "../assets/project/gallery/drummer.jpg";
-// import ElectricGuitarist from "../assets/project/gallery/electric_guitarist.jpg";
-// import GuyWithSaxophone from "../assets/project/gallery/guy_with_instrument.jpg";
-// import GuyWithIdkWhat from "../assets/project/gallery/guy_with_idk_what.jpg";
-// import GuyWithZurna from "../assets/project/gallery/guy_with_zurna.jpg";
-// import Keyboard from "../assets/project/gallery/keyboard.jpg";
 import Aida_Aram from "../assets/project/gallery/aida_arami.JPG";
 import Anna_Harutyunyan from "../assets/project/gallery/anna_harutyunyan.PNG";
 import Anna_Navasardyan from "../assets/project/gallery/anna_navasardyan.jpg";
@@ -22,6 +14,7 @@ import Harutyun_Khachatryan from "../assets/project/gallery/harutyun_khachatryan
 import Hayk_Grigoryan from "../assets/project/gallery/hayk_grigoryan.jpg";
 import Sergey_Areskin from "../assets/project/gallery/sergey_areskin.jpg";
 import Vahan_Urutyan from "../assets/project/gallery/vahan_urutyan.jpg";
+import Artur from "../assets/project/gallery/artur.jpg";
 
 export const project = [
   {
@@ -45,9 +38,39 @@ export const project = [
     instrument: "Երգչուհի",
   },
   {
+    fullName: "Davit Nersisyan",
+    img: Davit_Nersisyan,
+    instrument: "Երգիչ",
+  },
+  {
+    fullName: "Garnik Gevorgyan",
+    img: Garnik_Gevorgyan,
+    instrument: "Երգիչ",
+  },
+  {
+    fullName: "Harutyun Khachatryan",
+    img: Harutyun_Khachatryan,
+    instrument: "Երգիչ",
+  },
+  {
+    fullName: "Artur Knyazyan",
+    img: Artur_Knyazyan,
+    instrument: "Հարվածային գործիքներ",
+  },
+  {
     fullName: "Aram Hakobyan",
     img: Aram_Hakobyan,
     instrument: "Դհոլ, թմբուկներ",
+  },
+  {
+    fullName: "Grisha Simonyan",
+    img: Grisha_Simonyan,
+    instrument: "Սոլո կիթառ",
+  },
+  {
+    fullName: "Sergey Areskin",
+    img: Sergey_Areskin,
+    instrument: "Բաս կիթառ",
   },
   {
     fullName: "Areg Karakhamyan",
@@ -62,48 +85,25 @@ export const project = [
   },
 
   {
-    fullName: "Grisha Simonyan",
-    img: Grisha_Simonyan,
-    instrument: "Սոլո կիթառ",
-  },
-  {
-    fullName: "Harutyun Khachatryan",
-    img: Harutyun_Khachatryan,
-    instrument: "Երգիչ",
-  },
-  {
     fullName: "Hayk Grigoryan",
     img: Hayk_Grigoryan,
     instrument: "Շեփոր",
   },
-  {
-    fullName: "Sergey Areskin",
-    img: Sergey_Areskin,
-    instrument: "Բաս կիթառ",
-  },
+
   {
     fullName: "Vahan Urutyan",
     img: Vahan_Urutyan,
     instrument: "Կլարնետ, դուդուկ, պկու",
   },
-  {
-    fullName: "Davit Nersisyan",
-    img: Davit_Nersisyan,
-    instrument: "Երգիչ",
-  },
-  {
-    fullName: "Garnik Gevorgyan",
-    img: Garnik_Gevorgyan,
-    instrument: "Երգիչ",
-  },
+
   {
     fullName: "Arkadi Chobanyan",
     img: Arkadi_Chobanyan,
     instrument: "Ստեղնաշարային գործիքներ",
   },
   {
-    fullName: "Artur Knyazyan",
-    img: Artur_Knyazyan,
-    instrument: "Հարվածային գործիքներ",
+    fullName: "Artur Alikhanyan",
+    img: Artur,
+    instrument: "Հիմնադիր",
   },
 ];
