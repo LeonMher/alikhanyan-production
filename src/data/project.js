@@ -1,109 +1,91 @@
-import Aida_Aram from "../assets/project/gallery/aida_arami.JPG";
-import Anna_Harutyunyan from "../assets/project/gallery/anna_harutyunyan.PNG";
-import Anna_Navasardyan from "../assets/project/gallery/anna_navasardyan.jpg";
-import Anna_Sedrakyan from "../assets/project/gallery/anna_sedryakyan.jpg";
-import Aram_Hakobyan from "../assets/project/gallery/aram_hakobyan.jpg";
-import Areg_Karakhamyan from "../assets/project/gallery/areg_karakhamyan.jpg";
-import Arkadi_Chobanyan from "../assets/project/gallery/arkadi_chobanyan.jpg";
-import Arsen_Simonyan from "../assets/project/gallery/arsen_simonyan.jpg";
-import Artur_Knyazyan from "../assets/project/gallery/artur_knyazyan.jpeg";
-import Davit_Nersisyan from "../assets/project/gallery/davit_nersisyan.jpg";
-import Garnik_Gevorgyan from "../assets/project/gallery/garnik_gevorgyan.jpg";
-import Grisha_Simonyan from "../assets/project/gallery/grisha_simonyan.jpg";
-import Harutyun_Khachatryan from "../assets/project/gallery/harutyun_khachatryan.JPG";
-import Hayk_Grigoryan from "../assets/project/gallery/hayk_grigoryan.jpg";
-import Sergey_Areskin from "../assets/project/gallery/sergey_areskin.jpg";
-import Vahan_Urutyan from "../assets/project/gallery/vahan_urutyan.jpg";
-import Artur from "../assets/project/gallery/artur.jpg";
-
 export const project = [
   {
     fullName: "Aida Arami",
-    img: Aida_Aram,
+    img: "https://res.cloudinary.com/ds06qiycz/image/upload/v1758737420/aida_arami_uxpmhl.jpg",
     instrument: "Երգչուհի",
   },
   {
     fullName: "Anna Harutyunyan",
-    img: Anna_Harutyunyan,
+    img: "https://res.cloudinary.com/ds06qiycz/image/upload/v1758737589/anna_harutyunyan_o88mdn.png",
     instrument: "Երգչուհի",
   },
   {
     fullName: "Anna Navasardyan",
-    img: Anna_Navasardyan,
+    img: "https://res.cloudinary.com/ds06qiycz/image/upload/v1758737653/anna_navasardyan_ppqzsp.jpg",
     instrument: "Երգչուհի",
   },
   {
     fullName: "Anna Sedrakyan",
-    img: Anna_Sedrakyan,
+    img: "https://res.cloudinary.com/ds06qiycz/image/upload/v1758737708/anna_sedryakyan_jyerg4.jpg",
     instrument: "Երգչուհի",
   },
   {
     fullName: "Davit Nersisyan",
-    img: Davit_Nersisyan,
+    img: "https://res.cloudinary.com/ds06qiycz/image/upload/v1758737783/davit_nersisyan_wknpap.jpg",
     instrument: "Երգիչ",
   },
   {
     fullName: "Garnik Gevorgyan",
-    img: Garnik_Gevorgyan,
+    img: "https://res.cloudinary.com/ds06qiycz/image/upload/v1758737972/garnik_gevorgyan_mmuupb.jpg",
     instrument: "Երգիչ",
   },
   {
     fullName: "Harutyun Khachatryan",
-    img: Harutyun_Khachatryan,
+    img: "https://res.cloudinary.com/ds06qiycz/image/upload/v1758738006/harutyun_khachatryan_hrrhdy.jpg",
     instrument: "Երգիչ",
   },
   {
     fullName: "Artur Knyazyan",
-    img: Artur_Knyazyan,
+    img: "https://res.cloudinary.com/ds06qiycz/image/upload/v1758738042/artur_knyazyan_hx7fa4.jpg",
     instrument: "Հարվածային գործիքներ",
   },
   {
     fullName: "Aram Hakobyan",
-    img: Aram_Hakobyan,
+    img: "https://res.cloudinary.com/ds06qiycz/image/upload/v1758738082/aram_hakobyan_pjtdyk.jpg",
     instrument: "Դհոլ, թմբուկներ",
   },
   {
     fullName: "Grisha Simonyan",
-    img: Grisha_Simonyan,
+    img: "https://res.cloudinary.com/ds06qiycz/image/upload/v1758738127/grisha_simonyan_mpsiec.jpg",
     instrument: "Սոլո կիթառ",
   },
   {
     fullName: "Sergey Areskin",
-    img: Sergey_Areskin,
+    img: "https://res.cloudinary.com/ds06qiycz/image/upload/v1758738168/sergey_areskin_jicj3w.jpg",
     instrument: "Բաս կիթառ",
   },
   {
     fullName: "Areg Karakhamyan",
-    img: Areg_Karakhamyan,
+    img: "https://res.cloudinary.com/ds06qiycz/image/upload/v1758738212/areg_karakhamyan_zdeopg.jpg",
     instrument: "Սաքսաֆոն",
   },
 
   {
     fullName: "Arsen Simonyan",
-    img: Arsen_Simonyan,
+    img: "https://res.cloudinary.com/ds06qiycz/image/upload/v1758738244/arsen_simonyan_zxnqbs.jpg",
     instrument: "Տրոմբոն",
   },
 
   {
     fullName: "Hayk Grigoryan",
-    img: Hayk_Grigoryan,
+    img: "https://res.cloudinary.com/ds06qiycz/image/upload/v1758738292/hayk_grigoryan_zuaszf.jpg",
     instrument: "Շեփոր",
   },
 
   {
     fullName: "Vahan Urutyan",
-    img: Vahan_Urutyan,
+    img: "https://res.cloudinary.com/ds06qiycz/image/upload/v1758738321/vahan_urutyan_ulahrr.jpg",
     instrument: "Կլարնետ, դուդուկ, պկու",
   },
 
   {
     fullName: "Arkadi Chobanyan",
-    img: Arkadi_Chobanyan,
+    img: "https://res.cloudinary.com/ds06qiycz/image/upload/v1758738349/arkadi_chobanyan_tiqmzd.jpg",
     instrument: "Ստեղնաշարային գործիքներ",
   },
   {
     fullName: "Artur Alikhanyan",
-    img: Artur,
+    img: "https://res.cloudinary.com/ds06qiycz/image/upload/v1758738406/artur_sa4z2k.jpg",
     instrument: "Հիմնադիր",
   },
 ];
