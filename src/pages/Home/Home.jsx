@@ -1,18 +1,29 @@
 import "./Home.css";
+import React, { useState, useEffect } from "react";
+import MusicLoader from "../../components/MusicLoader";
 import ProductionLogo from "../../assets/logos/alikhanyans_project.png";
 import Studio from "../../assets/logos/alikhanyans_studio.png";
 import AvosSchoolLogo from "../../assets/logos/avos_school.PNG";
-import CoverPicture from "../../assets/cover_pic.jpg";
 import { Link } from "react-router";
 
 const Home = () => {
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    const img = new window.Image();
+    img.src = "https://res.cloudinary.com/ds06qiycz/image/upload/v1758738791/instruments_xqsgmi.jpg";
+    img.onload = () => setLoading(false);
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="home-container flex justify-center items-center min-h-screen">
+        <MusicLoader />
+      </div>
+    );
+  }
+
   return (
     <div className="home-container flex justify-center items-center ">
-      {/* <img
-        className="absolute top-0 left-0 w-full h-full object-cover"
-        src={CoverPicture}
-        alt=""
-      /> */}
       <div className="flex flex-col md:flex-row w-full justify-around md:items-around items-center">
         <div className="flex flex-row md:flex-col gap-[50px] items-center duration-300 ease-in-out hover:scale-125">
           <img className="w-[100px] md:w-[210px]" src={ProductionLogo} alt="" />
