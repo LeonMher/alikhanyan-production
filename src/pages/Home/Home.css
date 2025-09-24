@@ -1,3 +1,10 @@
+/* Only scale logo images on hover, not buttons */
+.logo-hover-scale {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.logo-hover-scale:hover {
+  transform: scale(1.25);
+}
 .home-container {
   background: url("https://res.cloudinary.com/ds06qiycz/image/upload/v1758738791/instruments_xqsgmi.jpg");
   background-size: cover;

@@ -25,35 +25,29 @@ const Home = () => {
   return (
     <div className="home-container flex justify-center items-center ">
       <div className="flex flex-col md:flex-row w-full justify-around md:items-around items-center">
-        <div className="flex flex-row md:flex-col gap-[50px] items-center duration-300 ease-in-out hover:scale-125">
-          <img className="w-[100px] md:w-[210px]" src={ProductionLogo} alt="" />
+        <div className="flex flex-row md:flex-col gap-[50px] items-center">
           <Link to="/alikhanyans-project">
-            <button className="w-[100px] relative left-[20px] md:left-0 text-[11px] text-white bg-blue-800 p-[20px] rounded-2xl cursor-pointer">
-              Project
-            </button>
+            <img className="w-[100px] md:w-[210px] logo-hover-scale cursor-pointer" src={ProductionLogo} alt="" />
           </Link>
+
         </div>
 
-        <div className="flex flex-row md:flex-col gap-[50px] justify-center items-center duration-300 ease-in-out hover:scale-125">
-          <img className="md:w-[500px] w-[150px]" src={Studio} alt="" />
+        <div className="flex flex-row md:flex-col gap-[50px] justify-center items-center">
           <Link to="/alikhanyan-studio">
-            <button className="w-[100px] text-[11px]  text-white bg-blue-800 p-[20px] rounded-2xl cursor-pointer">
-              Studio
-            </button>
+            <img className="md:w-[500px] w-[150px] logo-hover-scale cursor-pointer" src={Studio} alt="" />
           </Link>
+
         </div>
-        <div className="duration-300  ease-in-out hover:scale-125">
+        <div>
           <div className="flex flex-row gap-[50px] md:flex-col justify-center items-center">
-            <img
-              className="md:w-[250px] w-[140px]"
-              src={AvosSchoolLogo}
-              alt=""
-            />
             <Link to="/avosschool">
-              <button className="w-[100px] text-[11px] text-white bg-blue-800 p-[20px] rounded-2xl cursor-pointer">
-                Avos School
-              </button>
+              <img
+                className="md:w-[250px] w-[140px] logo-hover-scale cursor-pointer"
+                src={AvosSchoolLogo}
+                alt=""
+              />
             </Link>
+
           </div>
         </div>
       </div>
