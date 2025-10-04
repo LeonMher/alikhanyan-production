@@ -4,6 +4,7 @@ import Home from "./pages/Home/Home";
 import AvosSchool from "./projects/AvosSchool/Main";
 import AlikhanyanStudio from "./projects/AlikhanyanStudio/Main";
 import AlikhanyansProject from "./projects/AlikhanyansProject/Main";
+import TeacherDetails from "./projects/AvosSchool/Teachers/TeacherDetails";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/avosschool" element={<AvosSchool />} />
           <Route path="/alikhanyan-studio" element={<AlikhanyanStudio />} />
           <Route path="/alikhanyans-project" element={<AlikhanyansProject />} />
+          <Route path="/avoschool/teacher/:teacherId" element={<TeacherDetails />} />
         </Routes>
       </BrowserRouter>
     </>

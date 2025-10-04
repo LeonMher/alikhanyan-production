@@ -8,7 +8,7 @@
 .music-loader .bar {
   width: 10px;
   height: 20px;
-  background: #3b82f6;
+  background: #EB384B;
   border-radius: 4px;
   animation: music-bar 1s infinite;
 }
