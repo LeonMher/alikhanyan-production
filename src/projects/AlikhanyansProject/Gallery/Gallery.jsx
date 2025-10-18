@@ -8,11 +8,12 @@ const Gallery = () => {
           Our Singers
         </h1>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12 justify-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12 mx-auto px-4 place-items-center">
+
           {project.map((artist, index) => (
             <div
               key={index}
-              className="w-72 h-[370px] bg-white/20 backdrop-blur-md border border-white/30 rounded-2xl shadow-lg hover:shadow-2xl transition duration-300 ease-in-out flex flex-col items-center pt-10 px-4"
+              className="w-72 h-[370px] bg-white/20 backdrop-blur-md border border-white/30 rounded-2xl shadow-lg hover:shadow-2xl transition duration-300 ease-in-out flex flex-col justify-center items-center pt-10 px-4"
             >
               {/* Avatar inside container */}
               <img
