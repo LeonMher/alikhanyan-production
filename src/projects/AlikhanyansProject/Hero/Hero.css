@@ -7,3 +7,27 @@
   width: 100%;
   color: white;
 }
+
+.hero-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.hero-left {
+  padding: 6px 12px;
+}
+
+.hero-right {
+  padding: 6px 12px;
+}
+
+@media (max-width: 768px) {
+  .hero-container {
+    padding: 20px;
+  }
+  .hero-right {
+    margin-top: 20px;
+    align-items: center;
+  }
+}
