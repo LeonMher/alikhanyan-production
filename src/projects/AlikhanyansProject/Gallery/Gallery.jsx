@@ -5,7 +5,7 @@ const Gallery = () => {
     <div className="bg-red-950 min-h-screen py-12 px-4">
       <div className="max-w-7xl mx-auto">
         <h1 className="text-[40px] text-white text-center mb-12 font-semibold tracking-wide">
-          Gallery
+          Our Singers
         </h1>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12 justify-center">
