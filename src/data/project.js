@@ -1,12 +1,12 @@
 export const project = [
   {
     fullName: "Aida Arami",
-    img: "https://res.cloudinary.com/ds06qiycz/image/upload/v1758737420/aida_arami_uxpmhl.jpg",
+    img: "https://res.cloudinary.com/ds06qiycz/image/upload/v1760772775/aida_arami_uxpmhl.jpg",
     instrument: "Երգչուհի",
   },
   {
     fullName: "Anna Harutyunyan",
-    img: "https://res.cloudinary.com/ds06qiycz/image/upload/v1758737589/anna_harutyunyan_o88mdn.png",
+    img: "https://res.cloudinary.com/ds06qiycz/image/upload/v1760772597/anna_harutyunyan_o88mdn_1_o4neln.png",
     instrument: "Երգչուհի",
   },
   {
@@ -74,7 +74,7 @@ export const project = [
 
   {
     fullName: "Vahan Urutyan",
-    img: "https://res.cloudinary.com/ds06qiycz/image/upload/v1758738321/vahan_urutyan_ulahrr.jpg",
+    img: "https://res.cloudinary.com/ds06qiycz/image/upload/v1760772704/vahan_urutyan_ulahrr.jpg",
     instrument: "Կլարնետ, դուդուկ, պկու",
   },
 
