@@ -1,6 +1,6 @@
-import BlueRoom from "../assets/rooms/blue_room.JPG";
-import RedRoom from "../assets/rooms/red_room.JPG";
-import GreenRoom from "../assets/rooms/green_room.JPG";
+import BlueRoom from "../assets/rooms/blue_room.jpg";
+import RedRoom from "../assets/rooms/red_room.jpg";
+import GreenRoom from "../assets/rooms/green_room.jpg";
 import OrangeRoom from "../assets/rooms/orange_room.JPG";
 
 export const rooms = [
