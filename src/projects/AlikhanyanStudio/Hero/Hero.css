@@ -6,3 +6,13 @@
   width: 100%;
   color: white;
 }
+
+.hero-inner .MuiButton-root {
+  min-width: 160px;
+}
+
+@media (min-width: 640px) {
+  .hero-inner .MuiButton-root {
+    min-width: 180px;
+  }
+}
