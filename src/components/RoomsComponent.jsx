@@ -6,7 +6,7 @@ const RoomsComponent = () => {
       {rooms.map((room, index) => (
         <div
           key={index}
-          className="flex flex-col justify-around md:flex-row bg-red-950 text-white mb-[50px] p-2 md:p-12"
+          className="flex flex-col justify-around md:flex-row bg-white text-black mb-[50px] p-2 md:p-12"
         >
           <div className="w-full ">
             <img className="w-full rounded-[65px]" src={room.img} alt="" />
@@ -22,6 +22,14 @@ const RoomsComponent = () => {
             <div>
               <p>Instruments</p>
               <p>{room.instruments}</p>
+            </div>
+            <div>
+              <a
+                href={`/studio/room/${room.name.replace(/\s+/g, "-").toLowerCase()}`}
+                className="inline-block bg-black text-white px-4 py-2 rounded-md mt-2 hover:bg-gray-800 transition-colors duration-200"
+              >
+                Details
+              </a>
             </div>
           </div>
         </div>

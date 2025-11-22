@@ -10,17 +10,31 @@ import Footer from "./Footer/Footer";
 const AvosSchool = () => {
   return (
     <div>
-      <nav className="flex justify-between items-center p-4 text-white bg-black">
+      <nav className="fixed top-0 left-0 right-0 z-50 flex justify-between items-center p-4 bg-white/10 backdrop-blur-md border-b border-white/20 shadow-lg">
         <div className="flex items-center gap-6">
-          <Link to="/" className="text-2xl font-bold">
+          <Link 
+            to="/" 
+            className="text-2xl font-bold hover:text-gray-200 transition-colors"
+            style={{ color: '#ffffff' }}
+          >
             Home
           </Link>
-          <Link to="/alikhanyan-studio" className="text-lg opacity-90 hover:opacity-100">
+          <Link 
+            to="/alikhanyan-studio" 
+            className="text-lg opacity-90 hover:opacity-100 transition-opacity"
+            style={{ color: '#ffffff' }}
+          >
             Studio
           </Link>
         </div>
         <div>
-          <Link to="/" className="text-sm text-gray-300">Back to main</Link>
+          <Link 
+            to="/" 
+            className="text-sm hover:text-gray-200 transition-colors"
+            style={{ color: '#ffffff' }}
+          >
+            Back to main
+          </Link>
         </div>
       </nav>
       <Hero />

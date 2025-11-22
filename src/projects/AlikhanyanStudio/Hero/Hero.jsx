@@ -8,8 +8,8 @@ const Hero = () => {
     <div className="flex flex-row items-center">
       <div className="hero-container-studio flex flex-row justify-center items-center p-[60px] gap-[20px]">
         <div className="hero-inner w-full p-[50px] flex flex-col items-center justify-center gap-6">
-          <div className="text-[70px] font-bold">Rehearsal Studio </div>
-          <div className="text-[22px] sm:text-[32px]">24/7 rehearsal spaces available</div>
+          <div className="text-[70px] font-bold text-white">Rehearsal Studio </div>
+          <div className="text-[22px] sm:text-[32px] text-white">24/7 rehearsal spaces available</div>
 
           {/* changed: stack buttons on mobile, row on small+ screens; buttons become full width on mobile */}
           <div className="flex flex-col sm:flex-row gap-4 w-full items-center sm:justify-center">

@@ -1,7 +1,7 @@
 import RoomsComponent from "../../../components/RoomsComponent";
 const Rooms = () => {
   return (
-    <div className="bg-red-950">
+    <div className="bg-white">
       <RoomsComponent />
     </div>
   );

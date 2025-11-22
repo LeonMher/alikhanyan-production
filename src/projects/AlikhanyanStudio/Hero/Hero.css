@@ -7,6 +7,15 @@
   color: white;
 }
 
+.hero-container-studio {
+  background: url("../../../assets/hero.jpg");
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  width: 100%;
+  color: white;
+}
+
 .hero-inner .MuiButton-root {
   min-width: 160px;
 }
