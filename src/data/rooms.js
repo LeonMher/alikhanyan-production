@@ -3,6 +3,11 @@ import RedRoom from "../assets/rooms/red_room.jpg";
 import GreenRoom from "../assets/rooms/green_room.jpg";
 import OrangeRoom from "../assets/rooms/orange_room.JPG";
 
+import BlueRoomDetails1 from "../assets/rooms/room_details/blue_room_details1.jpg";
+import BlueRoomDetails2 from "../assets/rooms/room_details/blue_room_details2.jpg";
+import BlueRoomDetails3 from "../assets/rooms/room_details/blue_room_details3.jpg";
+
+
 export const rooms = [
   {
     name: "Blue Room",
