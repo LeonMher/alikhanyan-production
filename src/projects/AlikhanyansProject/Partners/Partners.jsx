@@ -25,7 +25,7 @@ const About = () => {
   ];
 
   return (
-    <div className="flex flex-col  gap-[30px] p-12 bg-black text-gray-300">
+    <div id="our-partners" className="flex flex-col  gap-[30px] p-12 bg-black text-gray-300">
       <div className="flex justify-center">
         <span className="text-5xl font-bold mb-10">Our Partners</span>
       </div>
