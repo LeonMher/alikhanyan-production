@@ -1,9 +1,26 @@
 import AboutUsPic from "../../../assets/project/aboutUsPic.jpeg";
 import ArturPlaying from "../../../assets/project/about_us/artur_playing.jpg";
-import TwoSingers from "../../../assets/project/about_us/two_singers.jpg"
-import SingleSinger from "../../../assets/project/about_us/a_singer.jpg";  
+import TwoSingers from "../../../assets/project/about_us/two_singers.jpg";
+import SingleSinger from "../../../assets/project/about_us/a_singer.jpg";
+import BassGuitar from "../../../assets/project/about_us/bass_guitar.JPG";
+import HeroBackdrop from "../../../assets/project/hero.jpg";
+import ArturPlayingKeyboard from "../../../assets/project/about_us/Artur_playing_keyboard.JPG";
+
+import "./About.css";
 
 const About = () => {
+  const momentImages = [
+    { src: ArturPlaying, alt: "Artur playing guitar" },
+    { src: TwoSingers, alt: "Two singers on stage" },
+    { src: SingleSinger, alt: "Solo singer performing" },
+    { src: HeroBackdrop, alt: "Band performance on stage" },
+    { src: BassGuitar, alt: "Bass guitar performing" },
+    { src: ArturPlayingKeyboard, alt: "Artur playing keyboard" },
+
+  ];
+
+  const sliderImages = [...momentImages, ...momentImages];
+
   return (
     <div id="about-us" className="flex flex-col gap-[30px] px-4 md:px-8 lg:px-16 py-12 bg-black text-gray-300 min-h-screen w-full max-w-full overflow-x-hidden">
       {/* Header */}
@@ -33,25 +50,17 @@ const About = () => {
         </div>
       </div>
 
-      {/* Gallery Section */}
-      <div className="flex flex-col items-center mt-12 w-full">
-        <span className="text-4xl mb-6">Moments</span>
-        <div className="flex flex-col md:flex-row gap-6 w-full">
-          <img
-            src={ArturPlaying}
-            alt="Artur Playing"
-            className="w-full md:w-1/3 rounded-xl object-cover h-64"
-          />
-          <img
-            src={TwoSingers}
-            alt="Band on Stage"
-            className="w-full md:w-1/3 rounded-xl object-cover h-64 mx-auto"
-          />
-          <img
-            src={SingleSinger}
-            alt="Crowd Enjoying"
-            className="w-full md:w-1/3 rounded-xl object-cover object-center h-64 mx-auto"
-          />
+      {/* Moments Slider Section */}
+      <div className="flex flex-col items-center mt-12 w-full gap-6">
+        <span className="text-4xl">Moments</span>
+        <div className="moments-wrapper w-full">
+          <div className="moments-track">
+            {sliderImages.map((image, index) => (
+              <div className="moment-card" key={`${image.alt}-${index}`}>
+                <img src={image.src} alt={image.alt} loading="lazy" />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>

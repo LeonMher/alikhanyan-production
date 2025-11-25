@@ -10,17 +10,22 @@ export const project = [
     instrument: "Երգչուհի",
   },
   {
-    fullName: "Anna Navasardyan",
-    img: "https://res.cloudinary.com/ds06qiycz/image/upload/v1758737653/anna_navasardyan_ppqzsp.jpg",
+    fullName: "Մանե",
+    img: "https://res.cloudinary.com/ds06qiycz/image/upload/v1764091215/Mane_lmuiot.jpg",
     instrument: "Երգչուհի",
   },
   {
-    fullName: "Anna Sedrakyan",
-    img: "https://res.cloudinary.com/ds06qiycz/image/upload/v1758737708/anna_sedryakyan_jyerg4.jpg",
-    instrument: "Երգչուհի",
+    fullName: "Արեգ",
+    img: "https://res.cloudinary.com/ds06qiycz/image/upload/v1764091325/Areg_pgn58t.jpg",
+    instrument: "Մաեստրո",
   },
   {
-    fullName: "Davit Nersisyan",
+    fullName: "Կարեն",
+    img: "https://res.cloudinary.com/ds06qiycz/image/upload/v1764091416/Karen_mrb8bj.png",
+    instrument: "Թմբուկներ",
+  },
+  {
+    fullName: "Davit Nersesyan",
     img: "https://res.cloudinary.com/ds06qiycz/image/upload/v1758737783/davit_nersisyan_wknpap.jpg",
     instrument: "Երգիչ",
   },
