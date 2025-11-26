@@ -107,12 +107,30 @@ const About = () => {
     setScrollLeft(autoScrollPosition);
   };
 
-  // Global mouse move handler
+  // Handle touch drag
+  const handleTouchStart = (e) => {
+    setIsDragging(true);
+    const touch = e.touches[0];
+    dragStartXRef.current = touch.clientX;
+    dragStartPositionRef.current = autoScrollPosition;
+    setScrollLeft(autoScrollPosition);
+  };
+
+  // Global mouse and touch move handlers
   useEffect(() => {
     const handleGlobalMouseMove = (e) => {
       if (!isDragging) return;
       e.preventDefault();
       const deltaX = dragStartXRef.current - e.clientX; // Inverted for natural drag feel
+      const newPosition = dragStartPositionRef.current + deltaX;
+      setScrollLeft(newPosition);
+    };
+
+    const handleGlobalTouchMove = (e) => {
+      if (!isDragging) return;
+      e.preventDefault();
+      const touch = e.touches[0];
+      const deltaX = dragStartXRef.current - touch.clientX; // Inverted for natural drag feel
       const newPosition = dragStartPositionRef.current + deltaX;
       setScrollLeft(newPosition);
     };
@@ -134,18 +152,41 @@ const About = () => {
       setIsDragging(false);
     };
 
+    const handleGlobalTouchEnd = () => {
+      if (!isDragging) return;
+      const track = momentsTrackRef.current;
+      if (track) {
+        const trackWidth = track.scrollWidth / 2;
+        // Normalize position to be within bounds and update auto-scroll position
+        let normalizedPosition = scrollLeft;
+        if (normalizedPosition < 0) {
+          normalizedPosition = 0;
+        } else if (normalizedPosition >= trackWidth) {
+          normalizedPosition = normalizedPosition % trackWidth;
+        }
+        setAutoScrollPosition(normalizedPosition);
+      }
+      setIsDragging(false);
+    };
+
     if (isDragging) {
       document.addEventListener('mousemove', handleGlobalMouseMove);
       document.addEventListener('mouseup', handleGlobalMouseUp);
+      document.addEventListener('touchmove', handleGlobalTouchMove, { passive: false });
+      document.addEventListener('touchend', handleGlobalTouchEnd);
       document.body.style.cursor = 'grabbing';
       document.body.style.userSelect = 'none';
+      document.body.style.touchAction = 'none';
     }
 
     return () => {
       document.removeEventListener('mousemove', handleGlobalMouseMove);
       document.removeEventListener('mouseup', handleGlobalMouseUp);
+      document.removeEventListener('touchmove', handleGlobalTouchMove);
+      document.removeEventListener('touchend', handleGlobalTouchEnd);
       document.body.style.cursor = '';
       document.body.style.userSelect = '';
+      document.body.style.touchAction = '';
     };
   }, [isDragging, scrollLeft]);
 
@@ -193,7 +234,8 @@ const About = () => {
             ref={momentsTrackRef}
             className="moments-track"
             onMouseDown={handleMouseDown}
-            style={{ cursor: isDragging ? 'grabbing' : 'grab' }}
+            onTouchStart={handleTouchStart}
+            style={{ cursor: isDragging ? 'grabbing' : 'grab', touchAction: 'none' }}
           >
             {sliderImages.map((image, index) => (
               <div className="moment-card" key={`${image.alt}-${index}`}>
