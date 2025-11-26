@@ -10,17 +10,17 @@ export const project = [
     instrument: "Երգչուհի",
   },
   {
-    fullName: "Մանե",
+    fullName: "Մանե Տոնոյան",
     img: "https://res.cloudinary.com/ds06qiycz/image/upload/v1764091215/Mane_lmuiot.jpg",
     instrument: "Երգչուհի",
   },
   {
-    fullName: "Արեգ",
+    fullName: "Արեգ Արուստամյան",
     img: "https://res.cloudinary.com/ds06qiycz/image/upload/v1764091325/Areg_pgn58t.jpg",
-    instrument: "Մաեստրո",
+    instrument: "Գեղարվեստական ղեկավար",
   },
   {
-    fullName: "Կարեն",
+    fullName: "Կարեն Բարսեղյան",
     img: "https://res.cloudinary.com/ds06qiycz/image/upload/v1764091416/Karen_mrb8bj.png",
     instrument: "Թմբուկներ",
   },
