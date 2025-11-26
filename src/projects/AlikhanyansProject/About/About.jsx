@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import AboutUsPic from "../../../assets/project/aboutUsPic.jpeg";
 import ArturPlaying from "../../../assets/project/about_us/artur_playing.jpg";
 import TwoSingers from "../../../assets/project/about_us/two_singers.jpg";
@@ -5,10 +6,24 @@ import SingleSinger from "../../../assets/project/about_us/a_singer.jpg";
 import BassGuitar from "../../../assets/project/about_us/bass_guitar.JPG";
 import HeroBackdrop from "../../../assets/project/hero.jpg";
 import ArturPlayingKeyboard from "../../../assets/project/about_us/Artur_playing_keyboard.JPG";
+// import ParallaxBackground from "../../../assets/project/background.png";
+// import ParallaxForeground from "../../../assets/project/foreground.png";
 
 import "./About.css";
 
 const About = () => {
+  const parallaxRef = useRef(null);
+  const backgroundLayerRef = useRef(null);
+  const foregroundLayerRef = useRef(null);
+  const momentsTrackRef = useRef(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const dragStartXRef = useRef(0);
+  const dragStartPositionRef = useRef(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
+  const [autoScrollPosition, setAutoScrollPosition] = useState(0);
+  const animationFrameRef = useRef(null);
+  const lastTimeRef = useRef(null);
+
   const momentImages = [
     { src: ArturPlaying, alt: "Artur playing guitar" },
     { src: TwoSingers, alt: "Two singers on stage" },
@@ -20,6 +35,126 @@ const About = () => {
   ];
 
   const sliderImages = [...momentImages, ...momentImages];
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!parallaxRef.current) return;
+      const rect = parallaxRef.current.getBoundingClientRect();
+      const windowHeight = window.innerHeight || 1;
+      const progress = Math.min(
+        Math.max((windowHeight - rect.top) / (windowHeight + rect.height), 0),
+        1
+      );
+      const backgroundOffset = progress * 20;
+      const foregroundOffset = progress * 45;
+
+      if (backgroundLayerRef.current) {
+        backgroundLayerRef.current.style.transform = `translateY(${backgroundOffset}px)`;
+      }
+      if (foregroundLayerRef.current) {
+        foregroundLayerRef.current.style.transform = `translateY(${foregroundOffset}px)`;
+      }
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Auto-scroll animation
+  useEffect(() => {
+    if (!momentsTrackRef.current || isDragging) return;
+
+    const track = momentsTrackRef.current;
+    const trackWidth = track.scrollWidth / 2; // Half because we duplicate images
+    const speed = trackWidth / 35; // 35 seconds to complete one cycle
+
+    const animate = (currentTime) => {
+      if (!lastTimeRef.current) {
+        lastTimeRef.current = currentTime;
+      }
+
+      const deltaTime = (currentTime - lastTimeRef.current) / 1000; // Convert to seconds
+      lastTimeRef.current = currentTime;
+
+      setAutoScrollPosition((prev) => {
+        let newPosition = prev + speed * deltaTime;
+        // Reset when we've scrolled one full cycle
+        if (newPosition >= trackWidth) {
+          newPosition = 0;
+        }
+        return newPosition;
+      });
+
+      animationFrameRef.current = requestAnimationFrame(animate);
+    };
+
+    animationFrameRef.current = requestAnimationFrame(animate);
+
+    return () => {
+      if (animationFrameRef.current) {
+        cancelAnimationFrame(animationFrameRef.current);
+      }
+      lastTimeRef.current = null;
+    };
+  }, [isDragging]);
+
+  // Handle mouse drag
+  const handleMouseDown = (e) => {
+    setIsDragging(true);
+    dragStartXRef.current = e.clientX;
+    dragStartPositionRef.current = autoScrollPosition;
+    setScrollLeft(autoScrollPosition);
+  };
+
+  // Global mouse move handler
+  useEffect(() => {
+    const handleGlobalMouseMove = (e) => {
+      if (!isDragging) return;
+      e.preventDefault();
+      const deltaX = dragStartXRef.current - e.clientX; // Inverted for natural drag feel
+      const newPosition = dragStartPositionRef.current + deltaX;
+      setScrollLeft(newPosition);
+    };
+
+    const handleGlobalMouseUp = () => {
+      if (!isDragging) return;
+      const track = momentsTrackRef.current;
+      if (track) {
+        const trackWidth = track.scrollWidth / 2;
+        // Normalize position to be within bounds and update auto-scroll position
+        let normalizedPosition = scrollLeft;
+        if (normalizedPosition < 0) {
+          normalizedPosition = 0;
+        } else if (normalizedPosition >= trackWidth) {
+          normalizedPosition = normalizedPosition % trackWidth;
+        }
+        setAutoScrollPosition(normalizedPosition);
+      }
+      setIsDragging(false);
+    };
+
+    if (isDragging) {
+      document.addEventListener('mousemove', handleGlobalMouseMove);
+      document.addEventListener('mouseup', handleGlobalMouseUp);
+      document.body.style.cursor = 'grabbing';
+      document.body.style.userSelect = 'none';
+    }
+
+    return () => {
+      document.removeEventListener('mousemove', handleGlobalMouseMove);
+      document.removeEventListener('mouseup', handleGlobalMouseUp);
+      document.body.style.cursor = '';
+      document.body.style.userSelect = '';
+    };
+  }, [isDragging, scrollLeft]);
+
+  // Update transform based on drag or auto-scroll
+  useEffect(() => {
+    if (!momentsTrackRef.current) return;
+    const position = isDragging ? scrollLeft : autoScrollPosition;
+    momentsTrackRef.current.style.transform = `translateX(-${position}px)`;
+  }, [scrollLeft, autoScrollPosition, isDragging]);
 
   return (
     <div id="about-us" className="flex flex-col gap-[30px] px-4 md:px-8 lg:px-16 py-12 bg-black text-gray-300 min-h-screen w-full max-w-full overflow-x-hidden">
@@ -54,15 +189,23 @@ const About = () => {
       <div className="flex flex-col items-center mt-12 w-full gap-6">
         <span className="text-4xl">Moments</span>
         <div className="moments-wrapper w-full">
-          <div className="moments-track">
+          <div
+            ref={momentsTrackRef}
+            className="moments-track"
+            onMouseDown={handleMouseDown}
+            style={{ cursor: isDragging ? 'grabbing' : 'grab' }}
+          >
             {sliderImages.map((image, index) => (
               <div className="moment-card" key={`${image.alt}-${index}`}>
-                <img src={image.src} alt={image.alt} loading="lazy" />
+                <img src={image.src} alt={image.alt} loading="lazy" draggable="false" />
               </div>
             ))}
           </div>
         </div>
       </div>
+
+      {/* Parallax scene */}
+     
     </div>
   );
 };

@@ -6,8 +6,9 @@
   display: flex;
   align-items: center;
   gap: 24px;
-  animation: moments-scroll 35s linear infinite;
   width: max-content;
+  user-select: none;
+  will-change: transform;
 }
 
 .moment-card {
@@ -32,12 +33,47 @@
   transform: scale(1.05);
 }
 
-@keyframes moments-scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+
+.parallax-section {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  margin-top: 40px;
+  border-radius: 32px;
+  overflow: hidden;
+  isolation: isolate;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
+}
+
+.parallax-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  will-change: transform;
+  transition: transform 0.12s ease-out;
+}
+
+.parallax-background {
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.8);
+  z-index: 1;
+}
+
+.parallax-foreground {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 20px;
+  z-index: 2;
+}
+
+.parallax-foreground img {
+  width: 100%;
+  max-width: 900px;
+  pointer-events: none;
+  user-select: none;
 }
 
