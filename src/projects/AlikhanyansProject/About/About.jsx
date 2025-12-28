@@ -210,11 +210,14 @@ const About = () => {
         <div className="flex flex-col justify-center items-center md:items-start gap-[30px]">
           <span className="text-4xl">Our Story</span>
           <span>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti,
-            incidunt optio! Expedita, soluta ipsam. Tempora facere
-            reprehenderit, impedit quas ipsa veritatis exercitationem nobis
-            alias necessitatibus enim possimus in natus ratione.
+            Alikhanyan’s Project Orchestra-ն հիմնադրվել է 2019 թվականին՝ մեկ նպատակով․ ստեղծել բարձրակարգ, կենդանի երաժշտություն, որը ոչ միայն հնչում է, այլև զգացվում է։
           </span>
+          <button
+            className="mt-4 px-4 py-2 bg-red-900 text-white rounded hover:bg-red-700"
+            onClick={() => window.location.href = '/about-details'}
+          >
+            Կարդալ ավելին
+          </button>
           <div className="flex flex-row justify-around w-full">
             <div>
               <span className="text-red-900 font-bold text-4xl">10</span> + Years
