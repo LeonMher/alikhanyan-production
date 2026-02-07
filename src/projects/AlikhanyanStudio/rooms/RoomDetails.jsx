@@ -1,4 +1,5 @@
-import { useParams, Link } from "react-router";
+import { useParams } from "react-router";
+import { useState } from "react";
 import { rooms } from "../../../data/rooms";
 
 import BlueRoomDetails1 from "../../../assets/rooms/room_details/blue_room_details1.jpg";
@@ -16,6 +17,7 @@ import RedRoomDetails3 from "../../../assets/rooms/room_details/red_room_details
 const RoomDetails = () => {
   const { roomId } = useParams();
   const room = rooms.find(r => r.name.replace(/\s+/g, "-").toLowerCase() === roomId);
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   if (!room) {
     return (
@@ -60,27 +62,6 @@ const RoomDetails = () => {
 
   return (
     <div className="min-h-screen text-white" style={{ backgroundColor }}>
-      {/* Navigation */}
-      <div className="bg-black/30 backdrop-blur-sm border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <nav className="flex items-center gap-4">
-            <Link 
-              to="/alikhanyan-studio" 
-              className="text-white/90 hover:text-white transition-colors duration-200 text-sm sm:text-base"
-            >
-              ← Back to Studio
-            </Link>
-            <span className="text-white/40">|</span>
-            <Link 
-              to="/" 
-              className="text-white/90 hover:text-white transition-colors duration-200 text-sm sm:text-base"
-            >
-              Home
-            </Link>
-          </nav>
-        </div>
-      </div>
-
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
         {/* Room Header */}
@@ -90,45 +71,69 @@ const RoomDetails = () => {
           </h1>
         </div>
 
-        {/* Room Information */}
-        <div className="mb-8 sm:mb-12 space-y-6">
-          <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg p-6 sm:p-8">
-            <h2 className="text-xl sm:text-2xl font-semibold mb-2 text-white/90">
-              Price
-            </h2>
-            <p className="text-lg sm:text-xl text-white">
-              {room.price}
-            </p>
-          </div>
-
-          <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg p-6 sm:p-8">
-            <h2 className="text-xl sm:text-2xl font-semibold mb-4 text-white/90">
-              Instruments
-            </h2>
-            <p className="text-base sm:text-lg text-white/90 whitespace-pre-line leading-relaxed">
-              {room.instruments}
-            </p>
-          </div>
-        </div>
-
-        {/* Image Gallery */}
-        <div className="mb-8">
-          <h2 className="text-2xl sm:text-3xl font-semibold mb-6 sm:mb-8">
-            Gallery
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-            {images.map((src, i) => (
+        {/* Image Slideshow */}
+        <div className="mb-8 sm:mb-12">
+          <div className="relative w-full max-w-5xl mx-auto">
+            {/* Main Image */}
+            <div className="relative overflow-hidden rounded-lg shadow-2xl">
               <div 
-                key={i} 
-                className="rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300"
+                className="flex transition-transform duration-500 ease-in-out"
+                style={{ transform: `translateX(-${currentSlide * 100}%)` }}
               >
-                <img 
-                  src={src} 
-                  alt={`${room.name} ${i+1}`} 
-                  className="w-full h-64 sm:h-80 object-cover hover:scale-105 transition-transform duration-300" 
-                />
+                {images.map((src, i) => (
+                  <div key={i} className="min-w-full">
+                    <img 
+                      src={src} 
+                      alt={`${room.name} ${i+1}`} 
+                      className="w-full h-[400px] sm:h-[500px] md:h-[600px] object-cover" 
+                    />
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
+
+            {/* Navigation Buttons */}
+            {images.length > 1 && (
+              <>
+                {/* Previous Button */}
+                <button
+                  onClick={() => setCurrentSlide((prev) => (prev === 0 ? images.length - 1 : prev - 1))}
+                  className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all duration-200 z-10"
+                  aria-label="Previous image"
+                >
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                  </svg>
+                </button>
+
+                {/* Next Button */}
+                <button
+                  onClick={() => setCurrentSlide((prev) => (prev === images.length - 1 ? 0 : prev + 1))}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all duration-200 z-10"
+                  aria-label="Next image"
+                >
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+
+                {/* Dots Indicator */}
+                <div className="flex justify-center gap-2 mt-4">
+                  {images.map((_, i) => (
+                    <button
+                      key={i}
+                      onClick={() => setCurrentSlide(i)}
+                      className={`w-3 h-3 rounded-full transition-all duration-200 ${
+                        i === currentSlide 
+                          ? 'bg-white w-8' 
+                          : 'bg-white/50 hover:bg-white/75'
+                      }`}
+                      aria-label={`Go to slide ${i + 1}`}
+                    />
+                  ))}
+                </div>
+              </>
+            )}
           </div>
         </div>
       </div>

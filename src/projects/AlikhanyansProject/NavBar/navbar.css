@@ -73,7 +73,7 @@ nav a {
 }
 
 nav a:hover {
-  color: var(--secondaryColor);
+  color: var(--textColor);
 }
 
 header .nav-btn {
@@ -189,7 +189,7 @@ header h3 {
 
   header .responsive_nav a:hover {
     background-color: rgba(255, 255, 255, 0.1);
-    color: var(--secondaryColor);
+    color: var(--textColor);
   }
 
   /* Close button positioning */

@@ -21,32 +21,32 @@ Solo Guitar Combos: Artec, Vox, Fender Mustang GT 100
       `,
   },
   {
-    name: "Red Room (20 sq.m.)",
+    name: "Red Room",
     img: RedRoom,
     price: "4000 AMD/hour",
     instruments: `
-        Drums: Yamaha Stage Custom
-Keyboard: Yamaha P-125 88 keys
-Bass Guitar Combo: Hartke 4x10
-Solo Guitar Amp: Peavey JSX Joe Satriani Signature 120-Watt Guitar Head
+        Drums: Yamaha Stage Custom
+Keyboard: Yamaha P-125 88 keys
+Bass Guitar Combo: Hartke 4x10
+Solo Guitar Amp: Peavey JSX Joe Satriani Signature 120-Watt Guitar Head
       `,
   },
   {
-    name: "Green Room (10 sq.m.)",
+    name: "Green Room",
     img: GreenRoom,
     price: "3000 AMD/hour",
     instruments: `
-        Drums: Yamaha Stage Custom
+        Drums: Yamaha Stage Custom
 Stereo Monitor
-Solo Guitar Combo: Marshall MG 10 
+Solo Guitar Combo: Marshall MG 10 
       `,
   },
   {
-    name: "Orange Room (22 sq.m.)",
+    name: "Orange Room",
     img: OrangeRoom,
     price: "3000 AMD/hour",
     instruments: `
-        Keyboard: Yamaha MX61
+        Keyboard: Yamaha MX61
 Stereo Monitor
       `,
   },

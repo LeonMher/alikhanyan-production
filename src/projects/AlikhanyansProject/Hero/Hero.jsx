@@ -15,7 +15,16 @@ const Hero = () => {
 
           <div className="hero-right flex flex-col items-center md:items-end gap-4">
             <div className="text-[20px] md:text-[32px]">Call us for events</div>
-            <Button sx={{ width: "180px" }} variant="contained">
+            <Button 
+              sx={{ 
+                width: "220px",
+                height: "56px",
+                fontSize: "18px",
+                fontWeight: 600
+              }} 
+              variant="contained"
+              size="large"
+            >
               Call
             </Button>
           </div>
