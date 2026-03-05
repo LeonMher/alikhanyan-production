@@ -52,13 +52,13 @@ header {
   }
 }
 
-nav {
+header nav {
   display: flex;
   align-items: center;
   z-index: 999;
 }
 
-nav a {
+header nav a {
   margin: 0 0.5rem;
   color: var(--textColor);
   text-decoration: none;
@@ -67,7 +67,7 @@ nav a {
 }
 
 @media only screen and (min-width: 1025px) {
-  nav a {
+  header nav a {
     margin: 0 1rem;
   }
 }
@@ -122,7 +122,7 @@ header h3 {
   }
 }
 
-/* Mobile: Hide nav links, show burger menu */
+  /* Mobile: Hide nav links, show burger menu (only for project header) */
 @media only screen and (max-width: 1024px) {
   /* Show burger menu button */
   header .nav-btn {
@@ -131,8 +131,8 @@ header h3 {
     display: block;
   }
 
-  /* Hide desktop nav links by default */
-  nav a {
+  /* Hide desktop nav links by default (only in project header) */
+  header nav a {
     display: none;
   }
 
@@ -193,7 +193,7 @@ header h3 {
   }
 
   /* Close button positioning */
-  nav .nav-close-btn {
+  header nav .nav-close-btn {
     position: absolute;
     top: 1.5rem;
     right: 1.5rem;
