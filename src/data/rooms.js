@@ -12,7 +12,7 @@ export const rooms = [
   {
     name: "Blue Room",
     img: BlueRoom,
-    price: "3000AMD/hour",
+    price: "3000 AMD/hour",
     instruments: `
         Drums: Yamaha Stage Custom
 Keyboard: Korg Kronos 88 keys 

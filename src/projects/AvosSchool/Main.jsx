@@ -29,13 +29,22 @@ const AvosSchool = () => {
   return (
     <div>
       <nav className="fixed top-0 left-0 right-0 z-50 flex justify-start items-center p-4 bg-white/10 backdrop-blur-md border-b border-white/20 shadow-lg">
-        <Link 
-          to="/" 
-          className="text-2xl font-bold hover:text-gray-200 transition-colors"
-          style={{ color: textColor }}
-        >
-          Home
-        </Link>
+        <div className="flex items-center gap-6">
+          <Link 
+            to="/" 
+            className="text-xl hover:text-gray-200 transition-colors"
+            style={{ color: textColor }}
+          >
+            Home
+          </Link>
+          <Link 
+            to="/avosschool" 
+            className="text-2xl font-bold hover:opacity-100 transition-opacity"
+            style={{ color: textColor }}
+          >
+            School
+          </Link>
+        </div>
       </nav>
       <Hero />
       <div className="flex justify-center flex-col items-center">

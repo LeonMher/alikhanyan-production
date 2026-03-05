@@ -63,9 +63,22 @@ function NavBar() {
   return (
     <>
       <header style={{ color: textColor }}>
-        <Link to="/">
-          <h3 className="cursor-pointer" style={{ color: textColor }}>Project</h3>
-        </Link>
+        <div className="flex items-center gap-6">
+          <Link 
+            to="/" 
+            className="text-xl hover:text-gray-200 transition-colors"
+            style={{ color: textColor }}
+          >
+            Home
+          </Link>
+          <Link 
+            to="/alikhanyans-project" 
+            className="text-2xl font-bold hover:opacity-100 transition-opacity"
+            style={{ color: textColor }}
+          >
+            Project
+          </Link>
+        </div>
         <nav ref={navRef}>
           <a 
             href="#about-us" 

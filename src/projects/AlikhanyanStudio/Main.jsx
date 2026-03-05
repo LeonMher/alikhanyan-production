@@ -36,14 +36,14 @@ const AvosSchool = () => {
         <div className="flex items-center gap-6">
           <Link 
             to="/" 
-            className="text-2xl font-bold hover:text-gray-200 transition-colors"
+            className="text-xl hover:text-gray-200 transition-colors"
             style={{ color: textColor }}
           >
             Home
           </Link>
           <Link 
             to="/alikhanyan-studio" 
-            className="text-lg opacity-90 hover:opacity-100 transition-opacity"
+            className="text-2xl font-bold hover:opacity-100 transition-opacity"
             style={{ color: textColor }}
           >
             Studio
