@@ -1,37 +1,21 @@
 import "./Hero.css";
-import { Button } from "@mui/material";
 
-const Hero = () => {
-  return (
-    <div className="flex flex-row items-center">
-      <div className="hero-container flex items-around p-[40px] md:p-[90px]">
-        <div className="hero-inner w-full p-[50px] flex flex-col md:flex-row items-center md:items-center justify-between">
-          <div className="hero-left flex flex-col items-start">
-            <div className="text-[48px] md:text-[70px] font-bold leading-tight">
-              <div>Alikhanyan's</div>
-              <div>Project</div>
-            </div>
-          </div>
+const HERO_SRC =
+  "https://res.cloudinary.com/ddoaufnnz/image/upload/v1778515618/alikhanyan_project_hero_irjywj.png";
 
-          <div className="hero-right flex flex-col items-center md:items-end gap-4">
-            <div className="text-[20px] md:text-[32px]">Call us for events</div>
-            <Button 
-              sx={{ 
-                width: "220px",
-                height: "56px",
-                fontSize: "18px",
-                fontWeight: 600
-              }} 
-              variant="contained"
-              size="large"
-            >
-              Call
-            </Button>
-          </div>
-        </div>
-      </div>
+const Hero = () => (
+  <section className="alikhanyans-project-hero" aria-label="Alikhanyan's Project">
+    <div className="alikhanyans-project-hero__nav-spacer" aria-hidden="true" />
+    <div className="alikhanyans-project-hero__image-slot">
+      <img
+        className="alikhanyans-project-hero__image"
+        src={HERO_SRC}
+        alt="Alikhanyan's Project"
+        decoding="async"
+        fetchPriority="high"
+      />
     </div>
-  );
-};
+  </section>
+);
 
 export default Hero;

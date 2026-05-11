@@ -24,7 +24,8 @@ function NavBar() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      const heroHeight = document.querySelector('.hero-container')?.offsetHeight || 600;
+      const heroHeight =
+        document.querySelector(".alikhanyans-project-hero")?.offsetHeight || 600;
       
       // Change text color to black when scrolled past hero section (where white content starts)
       if (scrollY > heroHeight - 100) {

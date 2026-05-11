@@ -1,26 +1,31 @@
 import "./Hero.css";
-import AlikhanyanStudioLogo from "../../../assets/logos/alikhanyans_studio.png";
 import { Button } from "@mui/material";
 import { Link } from "react-router";
+
+const STUDIO_HERO_BG =
+  "https://res.cloudinary.com/ddoaufnnz/image/upload/v1778517774/studio-reception_isflbr.jpg";
 
 const Hero = () => {
   return (
     <div className="flex flex-row items-center">
-      <div className="hero-container-studio flex flex-row justify-center items-center p-[60px] gap-[20px]">
+      <div
+        className="alikhanyan-studio-hero flex flex-row justify-center items-center p-[60px] gap-[20px]"
+        style={{ backgroundImage: `url(${STUDIO_HERO_BG})` }}
+      >
         <div className="hero-inner w-full p-[50px] flex flex-col items-center justify-center gap-6">
           <div className="text-[70px] font-bold text-white">Rehearsal Studio </div>
           <div className="text-[22px] sm:text-[32px] text-white">24/7 rehearsal spaces available</div>
 
           <div className="flex justify-center w-full">
             <Link to="/alikhanyan-studio/3d-tour" className="w-full sm:w-auto">
-              <Button 
-                className="w-full sm:w-auto" 
+              <Button
+                className="w-full sm:w-auto"
                 variant="contained"
                 size="large"
                 sx={{
                   fontSize: "18px",
                   padding: "12px 32px",
-                  fontWeight: 600
+                  fontWeight: 600,
                 }}
               >
                 3D Tour
@@ -28,7 +33,6 @@ const Hero = () => {
             </Link>
           </div>
         </div>
-       
       </div>
     </div>
   );

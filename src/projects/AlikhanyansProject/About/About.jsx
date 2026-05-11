@@ -198,7 +198,10 @@ const About = () => {
   }, [scrollLeft, autoScrollPosition, isDragging]);
 
   return (
-    <div id="about-us" className="flex flex-col gap-[30px] px-4 md:px-8 lg:px-16 py-12 bg-black text-gray-300 min-h-screen w-full max-w-full overflow-x-hidden">
+    <div
+      id="about-us"
+      className="flex flex-col gap-[30px] px-4 md:px-8 lg:px-16 pt-12 pb-12 bg-black text-gray-300 min-h-screen w-full max-w-full overflow-x-hidden scroll-mt-[96px]"
+    >
       {/* Header */}
       <div className="flex justify-center">
         <span className="text-5xl font-bold mb-10">About us</span>

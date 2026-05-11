@@ -1,27 +1,18 @@
-.hero-container {
-  background: url("../../../assets/hero.jpg");
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
-  width: 100%;
-  color: white;
-}
-
-.hero-container-studio {
-  background: url("../../../assets/hero.jpg");
-  background-size: cover;
-  background-position: center;
+/* Scoped to this page only — avoids clashes with `.hero-container` in Avos / other apps */
+.alikhanyan-studio-hero {
   min-height: 100vh;
   width: 100%;
   color: white;
+  background-size: cover;
+  background-position: center;
 }
 
-.hero-inner .MuiButton-root {
+.alikhanyan-studio-hero .hero-inner .MuiButton-root {
   min-width: 160px;
 }
 
 @media (min-width: 640px) {
-  .hero-inner .MuiButton-root {
+  .alikhanyan-studio-hero .hero-inner .MuiButton-root {
     min-width: 180px;
   }
 }

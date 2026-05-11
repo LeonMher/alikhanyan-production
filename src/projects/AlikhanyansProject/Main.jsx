@@ -8,10 +8,16 @@ import Partners from './Partners/Partners'
 
 const AlikhanyansProject = () => {
   return (
-    <div className="w-full max-w-full overflow-x-hidden">
+    <div className="flex flex-col w-full max-w-full overflow-x-hidden bg-black">
       <NavBar />
-      <Hero />
-      <About />
+      <div className="shrink-0 w-full">
+        <Hero />
+      </div>
+      {/* Block-level gap so About cannot margin-collapse into the hero */}
+      <div className="h-10 w-full shrink-0 bg-black md:h-14" aria-hidden="true" />
+      <div className="shrink-0 w-full">
+        <About />
+      </div>
       <Videos />
       <Gallery />
       <Partners />

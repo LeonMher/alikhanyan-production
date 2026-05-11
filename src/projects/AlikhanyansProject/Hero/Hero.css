@@ -1,43 +1,82 @@
-.hero-container {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../../../assets/project/new_hero.jpg");
-  background-size: cover;
-  background-position: center;
+/* Unique class names: avoid `.hero-container` — Studio/Avos use it with background images
+   that would cascade here and show under the Cloudinary hero art. */
+
+/* Match fixed header height in NavBar/navbar.css (header { height: 80px }) */
+.alikhanyans-project-hero {
+  --project-nav-height: 80px;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
   height: 100vh;
-  width: 100%;
-  color: white;
+  overflow-x: clip;
+  display: flex;
+  flex-direction: column;
+  background-color: #000;
 }
 
-.hero-container-studio {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../../../assets/rooms/studio-reception.jpg");
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
-  width: 100%;
-  color: white;
-}
-
-.hero-inner {
-  max-width: 960px;
-  margin: 0 auto;
-  width: 100%;
-}
-
-.hero-left {
-  padding: 6px 12px;
-}
-
-.hero-right {
-  padding: 6px 12px;
-}
-
-@media (max-width: 768px) {
-  .hero-container {
-    padding: 20px;
+@supports (height: 100dvh) {
+  .alikhanyans-project-hero {
+    height: 100dvh;
   }
-  .hero-right {
-    margin-top: 20px;
-    align-items: center;
+}
+
+.alikhanyans-project-hero__nav-spacer {
+  flex: 0 0 auto;
+  height: var(--project-nav-height);
+  background-color: #000;
+}
+
+/* Fills area under the spacer; centers art without growing past --hero-art-max on wide screens */
+.alikhanyans-project-hero__image-slot {
+  --hero-art-max: 1920px;
+  flex: 1 1 auto;
+  min-height: 0;
+  width: 100%;
+  max-width: 100%;
+  display: grid;
+  place-items: center;
+  padding: 0 12px 16px;
+  padding-bottom: max(16px, env(safe-area-inset-bottom, 0px));
+  box-sizing: border-box;
+}
+
+.alikhanyans-project-hero__image {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: min(100%, var(--hero-art-max));
+  max-height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+/* Mobile / narrow: fill the viewport — cover crops edges instead of letterboxing with black */
+@media (max-width: 768px) {
+  .alikhanyans-project-hero {
+    background-color: transparent;
+  }
+
+  /* Let the image run to the top of the screen; fixed header sits over it (no black band) */
+  .alikhanyans-project-hero__nav-spacer {
+    display: none;
+  }
+
+  .alikhanyans-project-hero__image-slot {
+    flex: 1 1 auto;
+    min-height: 0;
+    padding: 0;
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    place-items: stretch;
+    overflow: hidden;
+  }
+
+  .alikhanyans-project-hero__image {
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    max-height: none;
+    object-fit: cover;
+    /* Slight pan left vs center (only affects cover crop) */
+    object-position: 75% center;
   }
 }
