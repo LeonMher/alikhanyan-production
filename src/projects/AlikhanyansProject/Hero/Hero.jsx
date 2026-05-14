@@ -1,7 +1,7 @@
 import "./Hero.css";
 
 const HERO_SRC =
-  "https://res.cloudinary.com/ddoaufnnz/image/upload/v1778515618/alikhanyan_project_hero_irjywj.png";
+  "https://res.cloudinary.com/ddoaufnnz/image/upload/v1778778442/alikhanyan_hero_updated_pjtbzv.jpg";
 
 const Hero = () => (
   <section className="alikhanyans-project-hero" aria-label="Alikhanyan's Project">

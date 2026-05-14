@@ -5,11 +5,6 @@ export const project = [
     instrument: "Երգչուհի",
   },
   {
-    fullName: "Աննա Հարությունյան",
-    img: "https://res.cloudinary.com/ds06qiycz/image/upload/v1760772597/anna_harutyunyan_o88mdn_1_o4neln.png",
-    instrument: "Երգչուհի",
-  },
-  {
     fullName: "Մանե Տոնոյան",
     img: "https://res.cloudinary.com/ds06qiycz/image/upload/v1764091215/Mane_lmuiot.jpg",
     instrument: "Երգչուհի",

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import AboutUsPic from "../../../assets/project/aboutUsPic.jpeg";
+import AboutUsPic from "../../../assets/logos/alikhanyans_project.png";
 import ArturPlaying from "../../../assets/project/about_us/artur_playing.jpg";
 import TwoSingers from "../../../assets/project/about_us/two_singers.jpg";
 import SingleSinger from "../../../assets/project/about_us/a_singer.jpg";
