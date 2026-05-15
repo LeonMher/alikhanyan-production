@@ -17,7 +17,7 @@ const Card = () => {
             <img
               src={teacher.img}
               alt={teacher.name}
-              className="w-full h-full object-cover rounded-md"
+              className="w-full h-full object-cover object-[center_22%] rounded-md"
             />
           </div>
 

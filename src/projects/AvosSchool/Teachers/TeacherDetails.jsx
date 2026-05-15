@@ -15,7 +15,16 @@ const TeacherDetails = () => {
   return (
     <div className="teacher-details" style={{maxWidth: 500, margin: '2rem auto', background: '#fff', borderRadius: 12, boxShadow: '0 2px 12px rgba(0,0,0,0.08)', padding: '2rem', color: '#222'}}>
       <div style={{width: 180, height: 180, margin: '0 auto 1rem auto', borderRadius: '50%', overflow: 'hidden'}}>
-        <img src={teacher.img} alt={teacher.name} style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+        <img
+          src={teacher.img}
+          alt={teacher.name}
+          style={{
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            objectPosition: "center 22%",
+          }}
+        />
       </div>
       <h2 style={{marginBottom: '0.5rem'}}>{teacher.name}</h2>
       <h4 style={{color: '#3b82f6', marginBottom: '1.5rem'}}>{teacher.skills.subject}</h4>
