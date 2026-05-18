@@ -1,4 +1,5 @@
 import "./Hero.css";
+import projectLogo from "../../../assets/logos/alikhanyans_project.png";
 
 const HERO_SRC =
   "https://res.cloudinary.com/ddoaufnnz/image/upload/v1778778442/alikhanyan_hero_updated_pjtbzv.jpg";
@@ -10,10 +11,21 @@ const Hero = () => (
       <img
         className="alikhanyans-project-hero__image"
         src={HERO_SRC}
-        alt="Alikhanyan's Project"
+        alt=""
         decoding="async"
         fetchPriority="high"
       />
+      <div className="alikhanyans-project-hero__overlay">
+        <div className="alikhanyans-project-hero__title">
+          <span className="alikhanyans-project-hero__title-line">Alikhanyan</span>
+          <span className="alikhanyans-project-hero__title-line">Project</span>
+        </div>
+        <img
+          className="alikhanyans-project-hero__logo"
+          src={projectLogo}
+          alt="Alikhanyan's Project"
+        />
+      </div>
     </div>
   </section>
 );

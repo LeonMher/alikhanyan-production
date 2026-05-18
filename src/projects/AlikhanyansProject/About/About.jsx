@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import AboutUsPic from "../../../assets/logos/alikhanyans_project.png";
+import projectLogo from "../../../assets/logos/alikhanyans_project.png";
 import ArturPlaying from "../../../assets/project/about_us/artur_playing.jpg";
 import TwoSingers from "../../../assets/project/about_us/two_singers.jpg";
 import SingleSinger from "../../../assets/project/about_us/a_singer.jpg";
@@ -209,7 +209,11 @@ const About = () => {
 
       {/* About Content */}
       <div className="flex flex-col md:flex-row gap-[30px] justify-center items-center">
-        <img className="w-1/2 md:w-1/3 rounded-2xl" src={AboutUsPic} alt="About Us" />
+        <img
+          className="w-[160px] sm:w-[200px] md:w-[240px] h-auto object-contain shrink-0"
+          src={projectLogo}
+          alt="Alikhanyan's Project"
+        />
         <div className="flex flex-col justify-center items-center md:items-start gap-[30px]">
           <span className="text-4xl">Our Story</span>
           <span>

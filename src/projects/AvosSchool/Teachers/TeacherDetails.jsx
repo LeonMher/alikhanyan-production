@@ -29,7 +29,7 @@ const TeacherDetails = () => {
       <h2 style={{marginBottom: '0.5rem'}}>{teacher.name}</h2>
       <h4 style={{color: '#3b82f6', marginBottom: '1.5rem'}}>{teacher.skills.subject}</h4>
       <div style={{marginBottom: '1rem'}}>
-        <strong>Experience:</strong> {teacher.skills.experience}<br/>
+        <strong>Փորձ:</strong> {teacher.skills.experience}<br/>
         <strong>At Avos School:</strong> {teacher.skills.atAvosSchool}
       </div>
       <div style={{marginTop: '1rem', color: '#444'}}>{teacher.description}</div>
