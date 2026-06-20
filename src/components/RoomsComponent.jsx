@@ -185,7 +185,23 @@ const RoomCard = ({ room }) => {
           <p className="font-semibold mb-1">Instruments</p>
           <p>{room.instruments}</p>
         </div>
-        {/* Details button removed as requested */}
+        {room.bookUrl && (
+          <a
+            href={room.bookUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-8 py-3 rounded-lg text-white font-semibold text-lg transition-colors"
+            style={{ backgroundColor: color.bg }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = color.hover;
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = color.bg;
+            }}
+          >
+            Book now
+          </a>
+        )}
       </div>
     </div>
   );

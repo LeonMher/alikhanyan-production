@@ -69,6 +69,16 @@ const RoomDetails = () => {
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 sm:mb-8 leading-tight">
             {room.name}
           </h1>
+          {room.bookUrl && (
+            <a
+              href={room.bookUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-8 py-3 rounded-lg bg-white text-gray-900 font-semibold text-lg hover:bg-gray-100 transition-colors"
+            >
+              Book now
+            </a>
+          )}
         </div>
 
         {/* Image Slideshow */}

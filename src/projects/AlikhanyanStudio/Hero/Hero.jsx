@@ -16,7 +16,26 @@ const Hero = () => {
           <div className="text-[70px] font-bold text-white">Rehearsal Studio </div>
           <div className="text-[22px] sm:text-[32px] text-white">24/7 rehearsal spaces available</div>
 
-          <div className="flex justify-center w-full">
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-4 w-full">
+            <a
+              href="https://app.slotify.am/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto"
+            >
+              <Button
+                className="w-full sm:w-auto"
+                variant="contained"
+                size="large"
+                sx={{
+                  fontSize: "18px",
+                  padding: "12px 32px",
+                  fontWeight: 600,
+                }}
+              >
+                Book
+              </Button>
+            </a>
             <Link to="/alikhanyan-studio/3d-tour" className="w-full sm:w-auto">
               <Button
                 className="w-full sm:w-auto"

@@ -1,15 +1,29 @@
 import { useEffect, useRef, useState } from "react";
 import projectLogo from "../../../assets/logos/alikhanyans_project.png";
-import ArturPlaying from "../../../assets/project/about_us/artur_playing.jpg";
-import TwoSingers from "../../../assets/project/about_us/two_singers.jpg";
-import SingleSinger from "../../../assets/project/about_us/a_singer.jpg";
-import BassGuitar from "../../../assets/project/about_us/bass_guitar.JPG";
-import HeroBackdrop from "../../../assets/project/hero.jpg";
-import ArturPlayingKeyboard from "../../../assets/project/about_us/Artur_playing_keyboard.JPG";
-// import ParallaxBackground from "../../../assets/project/background.png";
-// import ParallaxForeground from "../../../assets/project/foreground.png";
-
 import "./About.css";
+
+const MOMENT_IMAGES = [
+  {
+    src: "https://res.cloudinary.com/ds06qiycz/image/upload/v1781946536/artur_playing_ij2viy.jpg",
+    alt: "Artur playing guitar",
+  },
+  {
+    src: "https://res.cloudinary.com/ds06qiycz/image/upload/v1781946537/two_singers_jhdvmd.jpg",
+    alt: "Two singers on stage",
+  },
+  {
+    src: "https://res.cloudinary.com/ds06qiycz/image/upload/v1781946537/a_singer_an1gfb.jpg",
+    alt: "Solo singer performing",
+  },
+  {
+    src: "https://res.cloudinary.com/ds06qiycz/image/upload/v1781946634/hero_oizcgy.jpg",
+    alt: "Band performance on stage",
+  },
+  {
+    src: "https://res.cloudinary.com/ds06qiycz/image/upload/v1781946538/Artur_playing_keyboard_zf3x1m.jpg",
+    alt: "Artur playing keyboard",
+  },
+];
 
 const About = () => {
   const parallaxRef = useRef(null);
@@ -24,15 +38,7 @@ const About = () => {
   const animationFrameRef = useRef(null);
   const lastTimeRef = useRef(null);
 
-  const momentImages = [
-    { src: ArturPlaying, alt: "Artur playing guitar" },
-    { src: TwoSingers, alt: "Two singers on stage" },
-    { src: SingleSinger, alt: "Solo singer performing" },
-    { src: HeroBackdrop, alt: "Band performance on stage" },
-    { src: BassGuitar, alt: "Bass guitar performing" },
-    { src: ArturPlayingKeyboard, alt: "Artur playing keyboard" },
-
-  ];
+  const momentImages = MOMENT_IMAGES;
 
   const sliderImages = [...momentImages, ...momentImages];
 
