@@ -1,12 +1,21 @@
 import { Link } from "react-router";
+import { useScrollHideNavbar } from "../../../hooks/useScrollHideNavbar";
 
 const NAV_HEIGHT_PX = 64;
 
 const ThreeDTour = () => {
+  const isNavbarVisible = useScrollHideNavbar();
+
   return (
     <div className="w-full min-h-screen bg-black text-white">
       <nav
-        className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-sm"
+        className={[
+          "scroll-hide-nav",
+          "fixed top-0 left-0 right-0 z-[11000] bg-black/80 backdrop-blur-sm",
+          !isNavbarVisible && "scroll-hide-nav--hidden",
+        ]
+          .filter(Boolean)
+          .join(" ")}
         style={{ height: NAV_HEIGHT_PX }}
       >
         <div className="max-w-screen-xl mx-auto h-full px-4 flex items-center justify-between">

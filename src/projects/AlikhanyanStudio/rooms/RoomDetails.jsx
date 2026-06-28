@@ -1,22 +1,41 @@
-import { useParams } from "react-router";
-import { useState } from "react";
-import { rooms } from "../../../data/rooms";
+import { useParams } from 'react-router';
+import { useState } from 'react';
+import { rooms } from '../../../data/rooms';
 
-import BlueRoomDetails1 from "../../../assets/rooms/room_details/blue_room_details1.jpg";
-import BlueRoomDetails2 from "../../../assets/rooms/room_details/blue_room_details2.jpg";
-import BlueRoomDetails3 from "../../../assets/rooms/room_details/blue_room_details3.jpg";
-import GreenRoomDetails1 from "../../../assets/rooms/room_details/green_room_details1.jpg";
-import GreenRoomDetails2 from "../../../assets/rooms/room_details/green_room_details2.jpg";
+// import BlueRoomDetails1 from "../../../assets/rooms/room_details/blue_room_details1.jpg";
+// import BlueRoomDetails2 from "../../../assets/rooms/room_details/blue_room_details2.jpg";
+// import BlueRoomDetails3 from "../../../assets/rooms/room_details/blue_room_details3.jpg";
+// import GreenRoomDetails1 from "../../../assets/rooms/room_details/green_room_details1.jpg";
+// import GreenRoomDetails2 from "../../../assets/rooms/room_details/green_room_details2.jpg";
 
-import RedRoomDetails1 from "../../../assets/rooms/room_details/red_room_details1.jpg";
-import RedRoomDetails2 from "../../../assets/rooms/room_details/red_room_details2.jpg";
-import RedRoomDetails3 from "../../../assets/rooms/room_details/red_room_details3.jpg";
+// import RedRoomDetails1 from "../../../assets/rooms/room_details/red_room_details1.jpg";
+// import RedRoomDetails2 from "../../../assets/rooms/room_details/red_room_details2.jpg";
+// import RedRoomDetails3 from "../../../assets/rooms/room_details/red_room_details3.jpg";
 
+const BlueRoomDetails1 =
+  'https://res.cloudinary.com/ds06qiycz/image/upload/v1782633254/blue_room_details3_vv3dfb.jpg';
+const BlueRoomDetails2 =
+  'https://res.cloudinary.com/ds06qiycz/image/upload/v1782633253/blue_room_details2_awbomq.jpg';
+const BlueRoomDetails3 =
+  'https://res.cloudinary.com/ds06qiycz/image/upload/v1782633255/blue_room_details1_uv4ish.jpg';
 
+const GreenRoomDetails1 =
+  'https://res.cloudinary.com/ds06qiycz/image/upload/v1782633255/green_room_details2_x34uas.jpg';
+const GreenRoomDetails2 =
+  'https://res.cloudinary.com/ds06qiycz/image/upload/v1782633254/green_room_details1_yszczc.jpg';
+
+const RedRoomDetails1 =
+  'https://res.cloudinary.com/ds06qiycz/image/upload/v1782633255/red_room_details1_ag9bu6.jpg';
+const RedRoomDetails2 =
+  'https://res.cloudinary.com/ds06qiycz/image/upload/v1782633256/red_room_details2_azbzjc.jpg';
+const RedRoomDetails3 =
+  'https://res.cloudinary.com/ds06qiycz/image/upload/v1782633256/red_room_details3_zaqpjn.jpg';
 
 const RoomDetails = () => {
   const { roomId } = useParams();
-  const room = rooms.find(r => r.name.replace(/\s+/g, "-").toLowerCase() === roomId);
+  const room = rooms.find(
+    (r) => r.name.replace(/\s+/g, '-').toLowerCase() === roomId,
+  );
   const [currentSlide, setCurrentSlide] = useState(0);
 
   if (!room) {
@@ -34,18 +53,17 @@ const RoomDetails = () => {
   const isGreenRoom = room.name.toLowerCase().includes('green');
   const isRedRoom = room.name.toLowerCase().includes('red');
   const isOrangeRoom = room.name.toLowerCase().includes('orange');
-  
+
   // Set images based on room type
   let images;
   if (isGreenRoom) {
     images = [GreenRoomDetails1, GreenRoomDetails2, room.img]; // Use green room details + main image as third
   } else if (isBlueRoom) {
     images = [BlueRoomDetails1, BlueRoomDetails2, BlueRoomDetails3];
-     // Use blue room details
+    // Use blue room details
   } else if (isRedRoom) {
-    images = [RedRoomDetails1, RedRoomDetails2, RedRoomDetails3]
-  }
-  else {
+    images = [RedRoomDetails1, RedRoomDetails2, RedRoomDetails3];
+  } else {
     // For other rooms, use main image or default images
     images = [room.img, room.img, room.img];
   }
@@ -74,8 +92,7 @@ const RoomDetails = () => {
               href={room.bookUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-8 py-3 rounded-lg bg-white text-gray-900 font-semibold text-lg hover:bg-gray-100 transition-colors"
-            >
+              className="inline-block px-8 py-3 rounded-lg bg-white text-gray-900 font-semibold text-lg hover:bg-gray-100 transition-colors">
               Book now
             </a>
           )}
@@ -86,16 +103,15 @@ const RoomDetails = () => {
           <div className="relative w-full max-w-5xl mx-auto">
             {/* Main Image */}
             <div className="relative overflow-hidden rounded-lg shadow-2xl">
-              <div 
+              <div
                 className="flex transition-transform duration-500 ease-in-out"
-                style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-              >
+                style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
                 {images.map((src, i) => (
                   <div key={i} className="min-w-full">
-                    <img 
-                      src={src} 
-                      alt={`${room.name} ${i+1}`} 
-                      className="w-full h-[400px] sm:h-[500px] md:h-[600px] object-cover" 
+                    <img
+                      src={src}
+                      alt={`${room.name} ${i + 1}`}
+                      className="w-full h-[400px] sm:h-[500px] md:h-[600px] object-cover"
                     />
                   </div>
                 ))}
@@ -107,23 +123,47 @@ const RoomDetails = () => {
               <>
                 {/* Previous Button */}
                 <button
-                  onClick={() => setCurrentSlide((prev) => (prev === 0 ? images.length - 1 : prev - 1))}
+                  onClick={() =>
+                    setCurrentSlide((prev) =>
+                      prev === 0 ? images.length - 1 : prev - 1,
+                    )
+                  }
                   className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all duration-200 z-10"
-                  aria-label="Previous image"
-                >
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                  aria-label="Previous image">
+                  <svg
+                    className="w-6 h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M15 19l-7-7 7-7"
+                    />
                   </svg>
                 </button>
 
                 {/* Next Button */}
                 <button
-                  onClick={() => setCurrentSlide((prev) => (prev === images.length - 1 ? 0 : prev + 1))}
+                  onClick={() =>
+                    setCurrentSlide((prev) =>
+                      prev === images.length - 1 ? 0 : prev + 1,
+                    )
+                  }
                   className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all duration-200 z-10"
-                  aria-label="Next image"
-                >
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  aria-label="Next image">
+                  <svg
+                    className="w-6 h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
                   </svg>
                 </button>
 
@@ -134,8 +174,8 @@ const RoomDetails = () => {
                       key={i}
                       onClick={() => setCurrentSlide(i)}
                       className={`w-3 h-3 rounded-full transition-all duration-200 ${
-                        i === currentSlide 
-                          ? 'bg-white w-8' 
+                        i === currentSlide
+                          ? 'bg-white w-8'
                           : 'bg-white/50 hover:bg-white/75'
                       }`}
                       aria-label={`Go to slide ${i + 1}`}

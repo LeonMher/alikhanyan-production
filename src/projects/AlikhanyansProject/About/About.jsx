@@ -1,6 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import projectLogo from "../../../assets/logos/alikhanyans_project.png";
+import CloudinaryImage from "../../../components/CloudinaryImage";
 import "./About.css";
+
+const MOMENT_IMAGE_WIDTH = 400;
 
 const MOMENT_IMAGES = [
   {
@@ -255,7 +258,13 @@ const About = () => {
           >
             {sliderImages.map((image, index) => (
               <div className="moment-card" key={`${image.alt}-${index}`}>
-                <img src={image.src} alt={image.alt} loading="lazy" draggable="false" />
+                <CloudinaryImage
+                  src={image.src}
+                  width={MOMENT_IMAGE_WIDTH}
+                  alt={image.alt}
+                  loading="lazy"
+                  draggable="false"
+                />
               </div>
             ))}
           </div>

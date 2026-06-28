@@ -1,4 +1,7 @@
 import { project } from "../../../data/project";
+import CloudinaryImage from "../../../components/CloudinaryImage";
+
+const SINGER_AVATAR_WIDTH = 400;
 
 const Gallery = () => {
   return (
@@ -16,8 +19,9 @@ const Gallery = () => {
               className="w-56 h-[280px] bg-gray-50 border border-gray-200 rounded-2xl shadow-lg flex flex-col justify-center items-center pt-6 px-4"
             >
               {/* Avatar inside container */}
-              <img
+              <CloudinaryImage
                 src={artist.img}
+                width={SINGER_AVATAR_WIDTH}
                 alt={artist.fullName}
                 className="w-32 h-32 rounded-full object-cover border-4 border-gray-300 shadow-md"
               />

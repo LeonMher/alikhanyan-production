@@ -1,1 +1,11 @@
 @import "tailwindcss";
+
+.scroll-hide-nav {
+  transition: transform 0.3s ease-in-out;
+  will-change: transform;
+}
+
+.scroll-hide-nav--hidden {
+  transform: translateY(-100%);
+  pointer-events: none;
+}

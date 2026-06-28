@@ -1,6 +1,7 @@
 import { useRef, useState, useEffect } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-router";
+import { useScrollHideNavbar } from "../../../hooks/useScrollHideNavbar";
 
 import "./navbar.css";
 
@@ -8,6 +9,7 @@ function NavBar() {
   const navRef = useRef();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [textColor, setTextColor] = useState('#eee');
+  const isNavbarVisible = useScrollHideNavbar({ disabled: isMenuOpen });
 
   const showNavbar = () => {
     const isOpen = !isMenuOpen;
@@ -63,7 +65,10 @@ function NavBar() {
 
   return (
     <>
-      <header style={{ color: textColor }}>
+      <header
+        className={`scroll-hide-nav${isNavbarVisible ? "" : " scroll-hide-nav--hidden"}`}
+        style={{ color: textColor }}
+      >
         <div className="flex items-center gap-6">
           <Link 
             to="/" 
