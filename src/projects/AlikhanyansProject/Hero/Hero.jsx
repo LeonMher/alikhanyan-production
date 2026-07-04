@@ -1,11 +1,13 @@
-import "./Hero.css";
-import projectLogo from "../../../assets/logos/alikhanyans_project.png";
+import './Hero.css';
+import projectLogo from '../../../assets/logos/alikhanyans_project.png';
 
 const HERO_SRC =
-  "https://res.cloudinary.com/ddoaufnnz/image/upload/v1778778442/alikhanyan_hero_updated_pjtbzv.jpg";
+  'https://res.cloudinary.com/ddoaufnnz/image/upload/v1778778442/alikhanyan_hero_updated_pjtbzv.jpg';
 
 const Hero = () => (
-  <section className="alikhanyans-project-hero" aria-label="Alikhanyan's Project">
+  <section
+    className="alikhanyans-project-hero"
+    aria-label="Alikhanyan's Project">
     <div className="alikhanyans-project-hero__nav-spacer" aria-hidden="true" />
     <div className="alikhanyans-project-hero__image-slot">
       <img
@@ -17,7 +19,9 @@ const Hero = () => (
       />
       <div className="alikhanyans-project-hero__overlay">
         <div className="alikhanyans-project-hero__title">
-          <span className="alikhanyans-project-hero__title-line">Alikhanyan</span>
+          <span className="alikhanyans-project-hero__title-line">
+            Alikhanyan's
+          </span>
           <span className="alikhanyans-project-hero__title-line">Project</span>
         </div>
         <img
