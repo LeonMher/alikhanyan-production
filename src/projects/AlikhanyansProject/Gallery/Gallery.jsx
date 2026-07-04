@@ -1,5 +1,5 @@
-import { project } from "../../../data/project";
-import CloudinaryImage from "../../../components/CloudinaryImage";
+import { project } from '../../../data/project';
+import CloudinaryImage from '../../../components/CloudinaryImage';
 
 const SINGER_AVATAR_WIDTH = 400;
 
@@ -8,16 +8,14 @@ const Gallery = () => {
     <div id="our-singers" className="bg-white min-h-screen py-12 px-4">
       <div className="max-w-7xl mx-auto">
         <h1 className="text-[40px] text-black text-center mb-12 font-semibold tracking-wide">
-          Our Singers
+          Մեր թիմը
         </h1>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12 mx-auto px-4 place-items-center">
-
           {project.map((artist, index) => (
             <div
               key={index}
-              className="w-56 h-[280px] bg-gray-50 border border-gray-200 rounded-2xl shadow-lg flex flex-col justify-center items-center pt-6 px-4"
-            >
+              className="w-56 h-[280px] bg-gray-50 border border-gray-200 rounded-2xl shadow-lg flex flex-col justify-center items-center pt-6 px-4">
               {/* Avatar inside container */}
               <CloudinaryImage
                 src={artist.img}
@@ -29,7 +27,9 @@ const Gallery = () => {
               {/* Content */}
               <div className="text-center mt-4 text-black">
                 <h2 className="font-semibold text-lg">{artist.fullName}</h2>
-                <p className="font-medium text-xs mt-1 text-gray-700">{artist.instrument}</p>
+                <p className="font-medium text-xs mt-1 text-gray-700">
+                  {artist.instrument}
+                </p>
               </div>
             </div>
           ))}
