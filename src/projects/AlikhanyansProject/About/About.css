@@ -2,6 +2,12 @@
   overflow: hidden;
 }
 
+.moments-wrapper--static {
+  overflow: visible;
+  display: flex;
+  justify-content: center;
+}
+
 .moments-track {
   display: flex;
   align-items: center;
@@ -10,6 +16,15 @@
   user-select: none;
   will-change: transform;
   touch-action: none;
+}
+
+.moments-track--static {
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 720px;
+  will-change: auto;
+  touch-action: auto;
 }
 
 .moment-card {

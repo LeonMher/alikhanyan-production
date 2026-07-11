@@ -2,35 +2,16 @@ import { useEffect, useRef, useState } from "react";
 import projectLogo from "../../../assets/logos/alikhanyans_project.png";
 import CloudinaryImage from "../../../components/CloudinaryImage";
 import { useAboutUsContent } from "../../../hooks/useAboutUsContent";
+import { useMomentsImages } from "../../../hooks/useMomentsImages";
 import "./About.css";
 
 const MOMENT_IMAGE_WIDTH = 400;
-
-const MOMENT_IMAGES = [
-  {
-    src: "https://res.cloudinary.com/ds06qiycz/image/upload/v1781946536/artur_playing_ij2viy.jpg",
-    alt: "Artur playing guitar",
-  },
-  {
-    src: "https://res.cloudinary.com/ds06qiycz/image/upload/v1781946537/two_singers_jhdvmd.jpg",
-    alt: "Two singers on stage",
-  },
-  {
-    src: "https://res.cloudinary.com/ds06qiycz/image/upload/v1781946537/a_singer_an1gfb.jpg",
-    alt: "Solo singer performing",
-  },
-  {
-    src: "https://res.cloudinary.com/ds06qiycz/image/upload/v1781946634/hero_oizcgy.jpg",
-    alt: "Band performance on stage",
-  },
-  {
-    src: "https://res.cloudinary.com/ds06qiycz/image/upload/v1781946538/Artur_playing_keyboard_zf3x1m.jpg",
-    alt: "Artur playing keyboard",
-  },
-];
+/** Infinite marquee needs a long track; with few CMS images, duplication looks wrong. */
+const MARQUEE_MIN_IMAGES = 4;
 
 const About = () => {
   const { text: aboutUsText } = useAboutUsContent();
+  const { images: momentImages } = useMomentsImages();
   const parallaxRef = useRef(null);
   const backgroundLayerRef = useRef(null);
   const foregroundLayerRef = useRef(null);
@@ -43,9 +24,11 @@ const About = () => {
   const animationFrameRef = useRef(null);
   const lastTimeRef = useRef(null);
 
-  const momentImages = MOMENT_IMAGES;
-
-  const sliderImages = [...momentImages, ...momentImages];
+  const useMarquee = momentImages.length >= MARQUEE_MIN_IMAGES;
+  // Duplicate only for seamless infinite scroll — each CMS image still appears once per cycle.
+  const sliderImages = useMarquee
+    ? [...momentImages, ...momentImages]
+    : momentImages;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -72,12 +55,14 @@ const About = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Auto-scroll animation
+  // Auto-scroll animation (marquee only when there are enough unique images)
   useEffect(() => {
-    if (!momentsTrackRef.current || isDragging) return;
+    if (!useMarquee || !momentsTrackRef.current || isDragging) return;
 
     const track = momentsTrackRef.current;
     const trackWidth = track.scrollWidth / 2; // Half because we duplicate images
+    if (trackWidth <= 0) return;
+
     const speed = trackWidth / 35; // 35 seconds to complete one cycle
 
     const animate = (currentTime) => {
@@ -108,10 +93,18 @@ const About = () => {
       }
       lastTimeRef.current = null;
     };
-  }, [isDragging]);
+  }, [isDragging, momentImages.length, useMarquee]);
+
+  // Reset carousel position when CMS images replace the fallback set.
+  useEffect(() => {
+    setAutoScrollPosition(0);
+    setScrollLeft(0);
+    lastTimeRef.current = null;
+  }, [momentImages]);
 
   // Handle mouse drag
   const handleMouseDown = (e) => {
+    if (!useMarquee) return;
     setIsDragging(true);
     dragStartXRef.current = e.clientX;
     dragStartPositionRef.current = autoScrollPosition;
@@ -120,6 +113,7 @@ const About = () => {
 
   // Handle touch drag
   const handleTouchStart = (e) => {
+    if (!useMarquee) return;
     setIsDragging(true);
     const touch = e.touches[0];
     dragStartXRef.current = touch.clientX;
@@ -203,10 +197,10 @@ const About = () => {
 
   // Update transform based on drag or auto-scroll
   useEffect(() => {
-    if (!momentsTrackRef.current) return;
+    if (!useMarquee || !momentsTrackRef.current) return;
     const position = isDragging ? scrollLeft : autoScrollPosition;
     momentsTrackRef.current.style.transform = `translateX(-${position}px)`;
-  }, [scrollLeft, autoScrollPosition, isDragging]);
+  }, [scrollLeft, autoScrollPosition, isDragging, useMarquee]);
 
   return (
     <div
@@ -248,16 +242,20 @@ const About = () => {
       {/* Moments Slider Section */}
       <div className="flex flex-col items-center mt-12 w-full gap-6">
         <span className="text-4xl">Moments</span>
-        <div className="moments-wrapper w-full">
+        <div className={`moments-wrapper w-full${useMarquee ? "" : " moments-wrapper--static"}`}>
           <div
             ref={momentsTrackRef}
-            className="moments-track"
+            className={`moments-track${useMarquee ? "" : " moments-track--static"}`}
             onMouseDown={handleMouseDown}
             onTouchStart={handleTouchStart}
-            style={{ cursor: isDragging ? 'grabbing' : 'grab', touchAction: 'none' }}
+            style={
+              useMarquee
+                ? { cursor: isDragging ? "grabbing" : "grab", touchAction: "none" }
+                : undefined
+            }
           >
             {sliderImages.map((image, index) => (
-              <div className="moment-card" key={`${image.alt}-${index}`}>
+              <div className="moment-card" key={`${image.src}-${index}`}>
                 <CloudinaryImage
                   src={image.src}
                   width={MOMENT_IMAGE_WIDTH}
