@@ -1,12 +1,13 @@
 import React from "react";
+import { useAboutUsContent } from "../../../hooks/useAboutUsContent";
 
 const AboutDetails = () => {
+  const { text: aboutUsText } = useAboutUsContent();
+
   return (
     <div className="flex flex-col gap-6 px-4 md:px-8 lg:px-16 py-12 bg-black text-gray-300 min-h-screen w-full">
       <h1 className="text-5xl font-bold mb-6">About Alikhanyan’s Project Orchestra</h1>
-      <p className="text-lg leading-relaxed">
-       Alikhanyan’s Project Orchestra-ն հիմնադրվել է 2019 թվականին՝ մեկ նպատակով․ ստեղծել բարձրակարգ, կենդանի երաժշտություն, որը ոչ միայն հնչում է, այլև զգացվում է։
-      </p>
+      <p className="text-lg leading-relaxed whitespace-pre-line">{aboutUsText}</p>
       <p className="text-lg leading-relaxed">
         
 Նախագիծը համախմբում է 17 փորձառու և պրոֆեսիոնալ երաժիշտների՝

@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import projectLogo from "../../../assets/logos/alikhanyans_project.png";
 import CloudinaryImage from "../../../components/CloudinaryImage";
+import { useAboutUsContent } from "../../../hooks/useAboutUsContent";
 import "./About.css";
 
 const MOMENT_IMAGE_WIDTH = 400;
@@ -29,6 +30,7 @@ const MOMENT_IMAGES = [
 ];
 
 const About = () => {
+  const { text: aboutUsText } = useAboutUsContent();
   const parallaxRef = useRef(null);
   const backgroundLayerRef = useRef(null);
   const foregroundLayerRef = useRef(null);
@@ -225,9 +227,7 @@ const About = () => {
         />
         <div className="flex flex-col justify-center items-center md:items-start gap-[30px]">
           <span className="text-4xl">Our Story</span>
-          <span>
-            Alikhanyan’s Project Orchestra-ն հիմնադրվել է 2019 թվականին՝ մեկ նպատակով․ ստեղծել բարձրակարգ, կենդանի երաժշտություն, որը ոչ միայն հնչում է, այլև զգացվում է։
-          </span>
+          <span>{aboutUsText}</span>
           <button
             className="mt-4 px-4 py-2 bg-red-900 text-white rounded hover:bg-red-700"
             onClick={() => window.location.href = '/about-details'}
