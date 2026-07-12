@@ -13,21 +13,21 @@ const Hero = () => (
       <img
         className="alikhanyans-project-hero__image"
         src={HERO_SRC}
-        alt=""
+        alt="Alikhanyan's Project Orchestra live performance"
         decoding="async"
         fetchPriority="high"
       />
       <div className="alikhanyans-project-hero__overlay">
-        <div className="alikhanyans-project-hero__title">
+        <h1 className="alikhanyans-project-hero__title">
           <span className="alikhanyans-project-hero__title-line">
             Alikhanyan's
           </span>
           <span className="alikhanyans-project-hero__title-line">Project</span>
-        </div>
+        </h1>
         <img
           className="alikhanyans-project-hero__logo"
           src={projectLogo}
-          alt="Alikhanyan's Project"
+          alt="Alikhanyan's Project logo"
         />
       </div>
     </div>

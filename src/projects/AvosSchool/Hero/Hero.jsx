@@ -6,6 +6,7 @@ const Hero = () => {
   return (
     <div className="hero-container flex justify-center items-center">
       <div className="flex flex-col items-center gap-6">
+        <h1 className="sr-only">Avos School — music lessons in Yerevan</h1>
         <img src={AvosSchoolLogo} alt="Avos School" />
         <Link
           to="/avosschool/3d-tour"

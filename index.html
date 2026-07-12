@@ -2,16 +2,149 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-  <link rel="icon" type="image/png" href="/src/assets/logos/alikhanyan_production.PNG" />
-    <link href="/dist/styles.css" rel="stylesheet" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, viewport-fit=cover"
     />
-    <title>Alikhanyan</title>
+    <title>
+      Alikhanyan Production | Music Studio, Orchestra &amp; School in Yerevan
+    </title>
+    <meta
+      name="description"
+      content="Alikhanyan Production — music studio, Alikhanyan's Project orchestra, and Avos School in Yerevan. Recording rooms, live performances, and music education."
+    />
+    <meta
+      name="keywords"
+      content="Alikhanyan, Alikhanyan Production, Alikhanyan's Project, Alikhanyan Studio, Avos School, music studio Yerevan, recording studio Armenia, orchestra Yerevan, music school Yerevan, Մաշտոցի"
+    />
+    <meta name="author" content="Alikhanyan Production" />
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
+    <meta name="theme-color" content="#000000" />
+    <meta name="geo.region" content="AM-ER" />
+    <meta name="geo.placename" content="Yerevan" />
+
+    <link rel="canonical" href="https://alikhanyan.netlify.app/" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Alikhanyan Production" />
+    <meta
+      property="og:title"
+      content="Alikhanyan Production | Music Studio, Orchestra &amp; School in Yerevan"
+    />
+    <meta
+      property="og:description"
+      content="Alikhanyan Production — music studio, Alikhanyan's Project orchestra, and Avos School in Yerevan. Recording rooms, live performances, and music education."
+    />
+    <meta property="og:url" content="https://alikhanyan.netlify.app/" />
+    <meta
+      property="og:image"
+      content="https://res.cloudinary.com/ddoaufnnz/image/upload/v1778778442/alikhanyan_hero_updated_pjtbzv.jpg"
+    />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="hy_AM" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Alikhanyan Production | Music Studio, Orchestra &amp; School in Yerevan"
+    />
+    <meta
+      name="twitter:description"
+      content="Alikhanyan Production — music studio, Alikhanyan's Project orchestra, and Avos School in Yerevan."
+    />
+    <meta
+      name="twitter:image"
+      content="https://res.cloudinary.com/ddoaufnnz/image/upload/v1778778442/alikhanyan_hero_updated_pjtbzv.jpg"
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://alikhanyan.netlify.app/#organization",
+            "name": "Alikhanyan Production",
+            "url": "https://alikhanyan.netlify.app/",
+            "logo": "https://alikhanyan.netlify.app/favicon.png",
+            "sameAs": [
+              "https://www.youtube.com/@alikhanyansproject"
+            ],
+            "telephone": "+37455241333",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Mashtots Avenue 8/11",
+              "addressLocality": "Yerevan",
+              "addressCountry": "AM"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://alikhanyan.netlify.app/#website",
+            "url": "https://alikhanyan.netlify.app/",
+            "name": "Alikhanyan Production",
+            "publisher": {
+              "@id": "https://alikhanyan.netlify.app/#organization"
+            },
+            "inLanguage": ["en", "hy"]
+          },
+          {
+            "@type": "MusicGroup",
+            "name": "Alikhanyan's Project Orchestra",
+            "url": "https://alikhanyan.netlify.app/alikhanyans-project",
+            "foundingDate": "2019",
+            "genre": "Live orchestra",
+            "parentOrganization": {
+              "@id": "https://alikhanyan.netlify.app/#organization"
+            }
+          },
+          {
+            "@type": "MusicVenue",
+            "name": "Alikhanyan Studio",
+            "url": "https://alikhanyan.netlify.app/alikhanyan-studio",
+            "telephone": "+37455241333",
+            "openingHours": "Mo-Su 00:00-23:59",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Mashtots Avenue 8/11",
+              "addressLocality": "Yerevan",
+              "addressCountry": "AM"
+            },
+            "parentOrganization": {
+              "@id": "https://alikhanyan.netlify.app/#organization"
+            }
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>
+    <noscript>
+      <header>
+        <h1>Alikhanyan Production</h1>
+        <p>
+          Music studio, Alikhanyan's Project orchestra, and Avos School in
+          Yerevan, Armenia. Phone: 055-241-333. Address: Mashtots Avenue 8/11.
+        </p>
+      </header>
+      <nav>
+        <ul>
+          <li>
+            <a href="/alikhanyans-project">Alikhanyan's Project Orchestra</a>
+          </li>
+          <li><a href="/alikhanyan-studio">Alikhanyan Studio</a></li>
+          <li><a href="/avosschool">Avos School</a></li>
+        </ul>
+      </nav>
+    </noscript>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

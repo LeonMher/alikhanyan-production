@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://alikhanyan.netlify.app/sitemap.xml

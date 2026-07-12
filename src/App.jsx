@@ -9,11 +9,13 @@ import TeacherDetails from "./projects/AvosSchool/Teachers/TeacherDetails";
 import ThreeDTour from "./projects/AlikhanyanStudio/3D_Tour/ThreeDTour";
 import SchoolThreeDTour from "./projects/AvosSchool/3D_Tour/SchoolThreeDTour";
 import AboutDetails from "./projects/AlikhanyansProject/About/AboutDetails";
+import Seo from "./seo/Seo";
 
 function App() {
   return (
     <>
       <BrowserRouter>
+        <Seo />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/avosschool" element={<AvosSchool />} />

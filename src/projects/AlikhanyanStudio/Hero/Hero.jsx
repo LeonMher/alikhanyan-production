@@ -13,8 +13,8 @@ const Hero = () => {
         style={{ backgroundImage: `url(${STUDIO_HERO_BG})` }}
       >
         <div className="hero-inner w-full p-[50px] flex flex-col items-center justify-center gap-6">
-          <div className="text-[70px] font-bold text-white">Rehearsal Studio </div>
-          <div className="text-[22px] sm:text-[32px] text-white">24/7 rehearsal spaces available</div>
+          <h1 className="text-[70px] font-bold text-white">Alikhanyan Studio</h1>
+          <p className="text-[22px] sm:text-[32px] text-white">24/7 rehearsal spaces available</p>
 
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4 w-full">
             <a

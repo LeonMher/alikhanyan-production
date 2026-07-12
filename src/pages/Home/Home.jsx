@@ -24,30 +24,42 @@ const Home = () => {
 
   return (
     <div className="home-container flex justify-center items-center ">
+      <h1 className="sr-only">
+        Alikhanyan Production — music studio, orchestra, and school in Yerevan
+      </h1>
+      <p className="sr-only">
+        Explore Alikhanyan&apos;s Project Orchestra, Alikhanyan Studio recording
+        rooms, and Avos School music lessons in Yerevan, Armenia.
+      </p>
       <div className="flex flex-col md:flex-row w-full justify-around md:items-around items-center">
         <div className="flex flex-row md:flex-col gap-[50px] items-center">
-          <Link to="/alikhanyans-project">
-            <img className="w-[100px] md:w-[210px] logo-hover-scale cursor-pointer" src={ProductionLogo} alt="" />
+          <Link to="/alikhanyans-project" aria-label="Alikhanyan's Project Orchestra">
+            <img
+              className="w-[100px] md:w-[210px] logo-hover-scale cursor-pointer"
+              src={ProductionLogo}
+              alt="Alikhanyan's Project Orchestra"
+            />
           </Link>
-
         </div>
 
         <div className="flex flex-row md:flex-col gap-[50px] justify-center items-center">
-          <Link to="/alikhanyan-studio">
-            <img className="md:w-[500px] w-[150px] logo-hover-scale cursor-pointer" src={Studio} alt="" />
+          <Link to="/alikhanyan-studio" aria-label="Alikhanyan Studio">
+            <img
+              className="md:w-[500px] w-[150px] logo-hover-scale cursor-pointer"
+              src={Studio}
+              alt="Alikhanyan Studio music rooms"
+            />
           </Link>
-
         </div>
         <div>
           <div className="flex flex-row gap-[50px] md:flex-col justify-center items-center">
-            <Link to="/avosschool">
+            <Link to="/avosschool" aria-label="Avos School">
               <img
                 className="md:w-[250px] w-[140px] logo-hover-scale cursor-pointer"
                 src={AvosSchoolLogo}
-                alt=""
+                alt="Avos School music education"
               />
             </Link>
-
           </div>
         </div>
       </div>
