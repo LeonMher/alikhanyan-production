@@ -25,11 +25,13 @@ const Home = () => {
   return (
     <div className="home-container flex justify-center items-center ">
       <h1 className="sr-only">
-        Alikhanyan Production — music studio, orchestra, and school in Yerevan
+        Alikhanyan — Ալիխանյան | official site for Alikhanyan Production
       </h1>
       <p className="sr-only">
-        Explore Alikhanyan&apos;s Project Orchestra, Alikhanyan Studio recording
-        rooms, and Avos School music lessons in Yerevan, Armenia.
+        Alikhanyan (Ալիխանյան) is the official website of Alikhanyan Production
+        in Yerevan, Armenia: Alikhanyan&apos;s Project Orchestra, Alikhanyan
+        Studio recording rooms, and Avos School music lessons. Phone:
+        055-241-333. Address: Mashtots Avenue 8/11.
       </p>
       <div className="flex flex-col md:flex-row w-full justify-around md:items-around items-center">
         <div className="flex flex-row md:flex-col gap-[50px] items-center">

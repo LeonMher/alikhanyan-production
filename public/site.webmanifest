@@ -1,0 +1,17 @@
+{
+  "name": "Alikhanyan Production",
+  "short_name": "Alikhanyan",
+  "description": "Alikhanyan — music studio, orchestra, and school in Yerevan",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

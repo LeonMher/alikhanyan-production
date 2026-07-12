@@ -7,12 +7,13 @@ export const DEFAULT_OG_IMAGE =
   "https://res.cloudinary.com/ddoaufnnz/image/upload/v1778778442/alikhanyan_hero_updated_pjtbzv.jpg";
 
 export const DEFAULT_DESCRIPTION =
-  "Alikhanyan Production — music studio, Alikhanyan's Project orchestra, and Avos School in Yerevan. Recording rooms, live performances, and music education.";
+  "Alikhanyan (Ալիխանյան) — official site for Alikhanyan Production, Alikhanyan's Project orchestra, Alikhanyan Studio, and Avos School in Yerevan, Armenia.";
 
 /** Per-route SEO (title, description). Paths without a match use the home defaults. */
 export const ROUTE_SEO = {
   "/": {
-    title: "Alikhanyan Production | Music Studio, Orchestra & School in Yerevan",
+    // Lead with exact brand query "Alikhanyan" for Google brand searches
+    title: "Alikhanyan | Official Site — Studio, Orchestra & School in Yerevan",
     description: DEFAULT_DESCRIPTION,
   },
   "/alikhanyans-project": {
@@ -26,7 +27,7 @@ export const ROUTE_SEO = {
       "Book music practice and recording rooms at Alikhanyan Studio on Mashtots Avenue, Yerevan. Open 24/7 with multiple rooms for bands and artists.",
   },
   "/avosschool": {
-    title: "Avos School | Music Lessons in Yerevan",
+    title: "Avos School by Alikhanyan | Music Lessons in Yerevan",
     description:
       "Avos School by Alikhanyan Production — music lessons, teachers, and after-school programs in Yerevan, Armenia.",
   },
@@ -36,7 +37,7 @@ export const ROUTE_SEO = {
       "Take a 3D virtual tour of Alikhanyan Studio music rooms in Yerevan.",
   },
   "/avosschool/3d-tour": {
-    title: "Avos School 3D Tour | Virtual Walkthrough",
+    title: "Avos School 3D Tour | Alikhanyan Production",
     description:
       "Take a 3D virtual tour of Avos School by Alikhanyan Production.",
   },
