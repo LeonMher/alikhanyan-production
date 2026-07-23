@@ -141,7 +141,7 @@
   }
 
   .alikhanyans-project-hero__logo {
-    width: clamp(112px, 36vw, 192px);
+    display: none;
   }
 }
 
