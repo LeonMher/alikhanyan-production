@@ -18,7 +18,7 @@ const Hero = () => {
 
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4 w-full">
             <a
-              href="https://app.slotify.am/"
+              href="https://app.slotify.am/tenant/alikhanyan-studio-2"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto"
